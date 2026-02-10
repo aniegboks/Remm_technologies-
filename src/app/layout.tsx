@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
-import { Montserrat, Jost} from "next/font/google";
+import { Montserrat, Jost } from "next/font/google";
 import "./globals.css";
-import { createClient, repositoryName } from "@/prismicio"; 
+import { createClient, repositoryName } from "@/prismicio";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
 import { PrismicPreview } from "@prismicio/next";
 import { ReactLenis } from "@/utils/lenis";
+import { Analytics } from "@vercel/analytics/next";
 
 const montserrat = Montserrat({
   weight: "400",
@@ -17,11 +18,10 @@ const montserrat = Montserrat({
 
 const jost = Jost({
   subsets: ["latin"],
-  weight: ["400", "500", "700"], 
+  weight: ["400", "500", "700"],
   variable: "--font-jost",
   display: "swap",
 });
-
 
 export async function generateMetadata(): Promise<Metadata> {
   try {
@@ -62,6 +62,7 @@ export default function RootLayout({
           <main>{children}</main>
           <Footer />
           <PrismicPreview repositoryName={repositoryName} />
+          <Analytics />
         </body>
       </ReactLenis>
     </html>
