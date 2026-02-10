@@ -1,0 +1,10 @@
+# Allow all search engines to crawl the site
+User-agent: *
+Allow: /
+
+# Link to the sitemap for faster indexing
+Sitemap: https://remm-technologies-partner.vercel.app/sitemap.xml
+
+# Optional: disallow any private folders or pages
+# Disallow: /admin/
+# Disallow: /api/
