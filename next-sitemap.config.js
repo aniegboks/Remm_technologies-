@@ -1,11 +1,8 @@
-import type { IConfig } from 'next-sitemap';
-
-const config: IConfig = {
-  siteUrl: 'https://remm-technologies-partner.vercel.app', // your canonical URL
+/** @type {import('next-sitemap').IConfig} */
+const config = {
+  siteUrl: "https://remm-technologies-partner.vercel.app",
   generateRobotsTxt: true,
-  changefreq: 'daily',
-  priority: 0.7,
-  sitemapSize: 5000,
+  outDir: "./public",
 };
 
 export default config;
