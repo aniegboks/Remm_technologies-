@@ -1,0 +1,99 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"clients_heading": {
+				"__TYPE__": "FieldContent",
+				"value": "badly",
+				"type": "Text"
+			},
+			"client_paragraph": {
+				"__TYPE__": "FieldContent",
+				"value": "list",
+				"type": "Text"
+			},
+			"client_button": {
+				"__TYPE__": "GroupContentType",
+				"value": [
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"client_label",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "comfortable",
+									"type": "Text"
+								}
+							],
+							[
+								"client_link",
+								{
+									"key": "c0aeaa5c-6c6b-42c8-be20-2484a35efe1d",
+									"__TYPE__": "LinkContent",
+									"value": {
+										"__TYPE__": "ExternalLink",
+										"url": "http://twitter.com",
+										"text": "buffalo"
+									}
+								}
+							]
+						]
+					}
+				]
+			},
+			"client_group": {
+				"__TYPE__": "GroupContentType",
+				"value": [
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"client_img",
+								{
+									"origin": {
+										"id": "main",
+										"url": "https://images.unsplash.com/photo-1551739440-5dd934d3a94a",
+										"width": 3456,
+										"height": 4320
+									},
+									"url": "https://images.unsplash.com/photo-1551739440-5dd934d3a94a",
+									"width": 3456,
+									"height": 4320,
+									"edit": {
+										"zoom": 1,
+										"crop": {
+											"x": 0,
+											"y": 0
+										},
+										"background": "transparent"
+									},
+									"alt": "either",
+									"credits": null,
+									"__TYPE__": "ImageContent",
+									"thumbnails": {}
+								}
+							],
+							[
+								"client_name",
+								{
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "heading1",
+											"content": {
+												"text": "Directly"
+											}
+										}
+									]
+								}
+							]
+						]
+					}
+				]
+			}
+		},
+		"items": []
+	}
+]

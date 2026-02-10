@@ -1,0 +1,86 @@
+{
+  "id": "client_carousel",
+  "type": "SharedSlice",
+  "name": "ClientCarousel",
+  "description": "ClientCarousel",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "clients_heading": {
+          "type": "Text",
+          "config": {
+            "label": "clients_heading",
+            "placeholder": ""
+          }
+        },
+        "client_paragraph": {
+          "type": "Text",
+          "config": {
+            "label": "client_paragraph",
+            "placeholder": ""
+          }
+        },
+        "client_button": {
+          "type": "Group",
+          "config": {
+            "label": "client_button",
+            "repeat": true,
+            "fields": {
+              "client_label": {
+                "type": "Text",
+                "config": {
+                  "label": "client_label",
+                  "placeholder": ""
+                }
+              },
+              "client_link": {
+                "type": "Link",
+                "config": {
+                  "label": "client_link",
+                  "placeholder": "",
+                  "select": null,
+                  "allowTargetBlank": true,
+                  "allowText": true,
+                  "repeat": false
+                }
+              }
+            }
+          }
+        },
+        "client_group": {
+          "type": "Group",
+          "config": {
+            "label": "client_group",
+            "repeat": true,
+            "fields": {
+              "client_img": {
+                "type": "Image",
+                "config": {
+                  "label": "client_img",
+                  "constraint": {},
+                  "thumbnails": []
+                }
+              },
+              "client_name": {
+                "type": "StructuredText",
+                "config": {
+                  "label": "client_name ",
+                  "placeholder": "",
+                  "allowTargetBlank": true,
+                  "multi": "heading1,heading2"
+                }
+              }
+            }
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

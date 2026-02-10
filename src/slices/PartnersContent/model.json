@@ -1,0 +1,155 @@
+{
+  "id": "partners_content",
+  "type": "SharedSlice",
+  "name": "PartnersContent",
+  "description": "PartnersContent",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "partner_img": {
+          "type": "Image",
+          "config": {
+            "label": "partner_img ",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "title": {
+          "type": "Text",
+          "config": {
+            "label": "title",
+            "placeholder": ""
+          }
+        },
+        "content": {
+          "type": "Text",
+          "config": {
+            "label": "content ",
+            "placeholder": ""
+          }
+        },
+        "button": {
+          "type": "Group",
+          "config": {
+            "label": "Button",
+            "repeat": true,
+            "fields": {
+              "button_label": {
+                "type": "Text",
+                "config": {
+                  "label": "Button Label",
+                  "placeholder": ""
+                }
+              },
+              "button_link": {
+                "type": "Link",
+                "config": {
+                  "label": "Button Link",
+                  "placeholder": "",
+                  "select": null,
+                  "allowTargetBlank": true,
+                  "allowText": true,
+                  "repeat": false
+                }
+              }
+            }
+          }
+        },
+        "reason_caption": {
+          "type": "Text",
+          "config": {
+            "label": "Reason_Caption",
+            "placeholder": ""
+          }
+        },
+        "partner_variant_content": {
+          "type": "Group",
+          "config": {
+            "label": "Partner Variant Content",
+            "repeat": true,
+            "fields": {
+              "variant_image": {
+                "type": "Image",
+                "config": {
+                  "label": "Variant Image",
+                  "constraint": {},
+                  "thumbnails": []
+                }
+              },
+              "variant_heading": {
+                "type": "Text",
+                "config": {
+                  "label": "Variant Heading ",
+                  "placeholder": ""
+                }
+              },
+              "variant_content": {
+                "type": "Text",
+                "config": {
+                  "label": "Variant Content ",
+                  "placeholder": ""
+                }
+              }
+            }
+          }
+        },
+        "partner_content": {
+          "type": "Group",
+          "config": {
+            "label": "Partner_Content ",
+            "repeat": true,
+            "fields": {
+              "partner_image": {
+                "type": "Image",
+                "config": {
+                  "label": "Partner Image",
+                  "constraint": {},
+                  "thumbnails": []
+                }
+              },
+              "partner_heading": {
+                "type": "Text",
+                "config": {
+                  "label": "Partner Heading",
+                  "placeholder": ""
+                }
+              },
+              "partner_content": {
+                "type": "Text",
+                "config": {
+                  "label": "Partner Content ",
+                  "placeholder": ""
+                }
+              },
+              "partner_link": {
+                "type": "Link",
+                "config": {
+                  "label": "Partner Link",
+                  "placeholder": "",
+                  "select": null,
+                  "allowTargetBlank": true,
+                  "allowText": true,
+                  "repeat": false
+                }
+              },
+              "partner_label": {
+                "type": "Text",
+                "config": {
+                  "label": "Partner Label",
+                  "placeholder": ""
+                }
+              }
+            }
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

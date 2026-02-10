@@ -1,0 +1,57 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"heading": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading1",
+						"content": {
+							"text": "Appearance"
+						}
+					}
+				]
+			},
+			"sub_heading": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading2",
+						"content": {
+							"text": "Article"
+						}
+					}
+				]
+			},
+			"paragraph": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Duis laborum pariatur dolore ex magna ea consectetur tempor duis esse enim esse."
+						}
+					}
+				]
+			},
+			"port_heading": {
+				"__TYPE__": "FieldContent",
+				"value": "bound",
+				"type": "Text"
+			},
+			"port_sub_heading": {
+				"__TYPE__": "FieldContent",
+				"value": "pale",
+				"type": "Text"
+			},
+			"port_paragraph": {
+				"__TYPE__": "FieldContent",
+				"value": "solar",
+				"type": "Text"
+			}
+		},
+		"items": []
+	}
+]

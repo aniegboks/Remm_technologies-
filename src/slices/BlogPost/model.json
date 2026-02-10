@@ -1,0 +1,86 @@
+{
+  "id": "blog_post",
+  "type": "SharedSlice",
+  "name": "BlogPost",
+  "description": "BlogPost",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "blog_image": {
+          "type": "Image",
+          "config": {
+            "label": "Blog image ",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "blog_heading": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Blog heading ",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "heading1,heading2,heading3"
+          }
+        },
+        "blog_content": {
+          "type": "Text",
+          "config": {
+            "label": "Blog content ",
+            "placeholder": ""
+          }
+        },
+        "sub_heading": {
+          "type": "StructuredText",
+          "config": {
+            "label": "sub heading",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "heading1,heading2,heading3,heading4,strong,em"
+          }
+        },
+        "sub_heading_content": {
+          "type": "Text",
+          "config": {
+            "label": "Sub heading content ",
+            "placeholder": ""
+          }
+        },
+        "button_group": {
+          "type": "Group",
+          "config": {
+            "label": "Button Group",
+            "repeat": true,
+            "fields": {
+              "button_link": {
+                "type": "Link",
+                "config": {
+                  "label": "Button link",
+                  "placeholder": "",
+                  "select": null,
+                  "allowTargetBlank": true,
+                  "allowText": true,
+                  "repeat": false
+                }
+              },
+              "button_label": {
+                "type": "Text",
+                "config": {
+                  "label": "Button label ",
+                  "placeholder": ""
+                }
+              }
+            }
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

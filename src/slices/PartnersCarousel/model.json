@@ -1,0 +1,56 @@
+{
+  "id": "partners_carousel",
+  "type": "SharedSlice",
+  "name": "PartnersCarousel",
+  "description": "PartnersCarousel",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "partners_carousel": {
+          "type": "Group",
+          "config": {
+            "label": "partners carousel",
+            "repeat": true,
+            "fields": {
+              "partner_img": {
+                "type": "Image",
+                "config": {
+                  "label": "partner_img",
+                  "constraint": {},
+                  "thumbnails": []
+                }
+              },
+              "partner_link": {
+                "type": "Link",
+                "config": {
+                  "label": "partner_link",
+                  "placeholder": "",
+                  "select": null,
+                  "allowTargetBlank": true,
+                  "allowText": true,
+                  "repeat": true
+                }
+              },
+              "partner_heading": {
+                "type": "StructuredText",
+                "config": {
+                  "label": "partner_heading ",
+                  "placeholder": "heading ",
+                  "allowTargetBlank": true,
+                  "multi": "heading1,strong,em"
+                }
+              }
+            }
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

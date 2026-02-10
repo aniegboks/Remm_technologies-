@@ -1,0 +1,94 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"blog_heading": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading1",
+						"content": {
+							"text": "Single"
+						}
+					}
+				]
+			},
+			"blog_content": {
+				"__TYPE__": "FieldContent",
+				"value": "native",
+				"type": "Text"
+			},
+			"button_group": {
+				"__TYPE__": "GroupContentType",
+				"value": [
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"button_link",
+								{
+									"key": "b3a2e0c5-6e3b-447c-a09c-51fb764930c6",
+									"__TYPE__": "LinkContent",
+									"value": {
+										"__TYPE__": "ExternalLink",
+										"url": "https://slicemachine.dev",
+										"text": "typical"
+									}
+								}
+							],
+							[
+								"button_label",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "sharp",
+									"type": "Text"
+								}
+							]
+						]
+					}
+				]
+			},
+			"sub_heading": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading1",
+						"content": {
+							"text": "Buffalo"
+						}
+					}
+				]
+			},
+			"sub_heading_content": {
+				"__TYPE__": "FieldContent",
+				"value": "pictured",
+				"type": "Text"
+			},
+			"blog_image": {
+				"origin": {
+					"id": "main",
+					"url": "https://images.unsplash.com/photo-1571126770897-2d612d1f7b89",
+					"width": 3456,
+					"height": 3456
+				},
+				"url": "https://images.unsplash.com/photo-1571126770897-2d612d1f7b89",
+				"width": 3456,
+				"height": 3456,
+				"edit": {
+					"zoom": 1,
+					"crop": {
+						"x": 0,
+						"y": 0
+					},
+					"background": "transparent"
+				},
+				"alt": "pet",
+				"credits": null,
+				"__TYPE__": "ImageContent",
+				"thumbnails": {}
+			}
+		},
+		"items": []
+	}
+]

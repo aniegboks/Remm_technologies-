@@ -1,0 +1,70 @@
+{
+  "id": "blog_preview_card",
+  "type": "SharedSlice",
+  "name": "BlogPreviewCard",
+  "description": "BlogPreviewCard",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "blog_group": {
+          "type": "Group",
+          "config": {
+            "label": "Blog Group",
+            "repeat": true,
+            "fields": {
+              "blog_image": {
+                "type": "Image",
+                "config": {
+                  "label": "Blog image ",
+                  "constraint": {},
+                  "thumbnails": []
+                }
+              },
+              "blog_heading": {
+                "type": "StructuredText",
+                "config": {
+                  "label": "Blog heading",
+                  "placeholder": "",
+                  "allowTargetBlank": true,
+                  "multi": "heading1,heading2"
+                }
+              },
+              "blog_caption": {
+                "type": "Text",
+                "config": {
+                  "label": "Blog Caption",
+                  "placeholder": ""
+                }
+              },
+              "blog_text": {
+                "type": "Text",
+                "config": {
+                  "label": "Blog text",
+                  "placeholder": ""
+                }
+              },
+              "blog_label": {
+                "type": "Link",
+                "config": {
+                  "label": "Blog link",
+                  "placeholder": "",
+                  "select": null,
+                  "allowTargetBlank": true,
+                  "allowText": true,
+                  "repeat": false
+                }
+              }
+            }
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

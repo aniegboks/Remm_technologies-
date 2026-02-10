@@ -1,0 +1,201 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"partner_img": {
+				"origin": {
+					"id": "main",
+					"url": "https://images.unsplash.com/photo-1587614295999-6c1c13675117",
+					"width": 3810,
+					"height": 5715
+				},
+				"url": "https://images.unsplash.com/photo-1587614295999-6c1c13675117",
+				"width": 3810,
+				"height": 5715,
+				"edit": {
+					"zoom": 1,
+					"crop": {
+						"x": 0,
+						"y": 0
+					},
+					"background": "transparent"
+				},
+				"alt": "tin",
+				"credits": null,
+				"__TYPE__": "ImageContent",
+				"thumbnails": {}
+			},
+			"title": {
+				"__TYPE__": "FieldContent",
+				"value": "zulu",
+				"type": "Text"
+			},
+			"content": {
+				"__TYPE__": "FieldContent",
+				"value": "train",
+				"type": "Text"
+			},
+			"button": {
+				"__TYPE__": "GroupContentType",
+				"value": [
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"button_label",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "tea",
+									"type": "Text"
+								}
+							],
+							[
+								"button_link",
+								{
+									"key": "5b6b3332-72c9-4b0b-a3be-8068bd3fbfbf",
+									"__TYPE__": "LinkContent",
+									"value": {
+										"__TYPE__": "ExternalLink",
+										"url": "https://prismic.io",
+										"text": "seat"
+									}
+								}
+							]
+						]
+					}
+				]
+			},
+			"partner_content": {
+				"__TYPE__": "GroupContentType",
+				"value": [
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"partner_image",
+								{
+									"origin": {
+										"id": "main",
+										"url": "https://images.unsplash.com/photo-1593642532973-d31b6557fa68",
+										"width": 8640,
+										"height": 8640
+									},
+									"url": "https://images.unsplash.com/photo-1593642532973-d31b6557fa68",
+									"width": 8640,
+									"height": 8640,
+									"edit": {
+										"zoom": 1,
+										"crop": {
+											"x": 0,
+											"y": 0
+										},
+										"background": "transparent"
+									},
+									"alt": "thy",
+									"credits": null,
+									"__TYPE__": "ImageContent",
+									"thumbnails": {}
+								}
+							],
+							[
+								"partner_content",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "future",
+									"type": "Text"
+								}
+							],
+							[
+								"partner_heading",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "tall",
+									"type": "Text"
+								}
+							],
+							[
+								"partner_link",
+								{
+									"key": "2cad732f-d2e0-4be1-a1fe-c46a83937f28",
+									"__TYPE__": "LinkContent",
+									"value": {
+										"__TYPE__": "ExternalLink",
+										"url": "http://google.com",
+										"text": "bite"
+									}
+								}
+							],
+							[
+								"partner_label",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "cage",
+									"type": "Text"
+								}
+							]
+						]
+					}
+				]
+			},
+			"partner_variant_content": {
+				"__TYPE__": "GroupContentType",
+				"value": [
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"variant_image",
+								{
+									"origin": {
+										"id": "main",
+										"url": "https://images.unsplash.com/photo-1600804931749-2da4ce26c869",
+										"width": 3199,
+										"height": 3199
+									},
+									"url": "https://images.unsplash.com/photo-1600804931749-2da4ce26c869",
+									"width": 3199,
+									"height": 3199,
+									"edit": {
+										"zoom": 1,
+										"crop": {
+											"x": 0,
+											"y": 0
+										},
+										"background": "transparent"
+									},
+									"alt": "ice",
+									"credits": null,
+									"__TYPE__": "ImageContent",
+									"thumbnails": {}
+								}
+							],
+							[
+								"variant_heading",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "slowly",
+									"type": "Text"
+								}
+							],
+							[
+								"variant_content",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "natural",
+									"type": "Text"
+								}
+							]
+						]
+					}
+				]
+			},
+			"reason_caption": {
+				"__TYPE__": "FieldContent",
+				"value": "contrast",
+				"type": "Text"
+			}
+		},
+		"items": []
+	}
+]

@@ -1,0 +1,90 @@
+{
+  "id": "partner_cards",
+  "type": "SharedSlice",
+  "name": "PartnerCards",
+  "description": "PartnerCards",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "partner_hero": {
+          "type": "Image",
+          "config": {
+            "label": "partner_hero",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "partner_title": {
+          "type": "Text",
+          "config": {
+            "label": "Partner_title",
+            "placeholder": ""
+          }
+        },
+        "partner_content": {
+          "type": "Text",
+          "config": {
+            "label": "Partner Content ",
+            "placeholder": ""
+          }
+        },
+        "partner_card": {
+          "type": "Group",
+          "config": {
+            "label": "Partner Card",
+            "repeat": true,
+            "fields": {
+              "partner_image": {
+                "type": "Image",
+                "config": {
+                  "label": "Partner Image",
+                  "constraint": {},
+                  "thumbnails": []
+                }
+              },
+              "partner_heading": {
+                "type": "Text",
+                "config": {
+                  "label": "Partner Heading",
+                  "placeholder": ""
+                }
+              },
+              "partner_content": {
+                "type": "Text",
+                "config": {
+                  "label": "Partner Content ",
+                  "placeholder": ""
+                }
+              },
+              "partner_link": {
+                "type": "Link",
+                "config": {
+                  "label": "Partner Link",
+                  "placeholder": "",
+                  "select": null,
+                  "allowTargetBlank": true,
+                  "allowText": true,
+                  "repeat": false
+                }
+              },
+              "partner_tag": {
+                "type": "Text",
+                "config": {
+                  "label": "partner_tag",
+                  "placeholder": ""
+                }
+              }
+            }
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

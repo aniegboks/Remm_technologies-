@@ -1,0 +1,114 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"partner_hero": {
+				"origin": {
+					"id": "main",
+					"url": "https://images.unsplash.com/photo-1448932223592-d1fc686e76ea",
+					"width": 3500,
+					"height": 2338
+				},
+				"url": "https://images.unsplash.com/photo-1448932223592-d1fc686e76ea",
+				"width": 3500,
+				"height": 2338,
+				"edit": {
+					"zoom": 1,
+					"crop": {
+						"x": 0,
+						"y": 0
+					},
+					"background": "transparent"
+				},
+				"alt": "round",
+				"credits": null,
+				"__TYPE__": "ImageContent",
+				"thumbnails": {}
+			},
+			"partner_title": {
+				"__TYPE__": "FieldContent",
+				"value": "acres",
+				"type": "Text"
+			},
+			"partner_content": {
+				"__TYPE__": "FieldContent",
+				"value": "plate",
+				"type": "Text"
+			},
+			"partner_card": {
+				"__TYPE__": "GroupContentType",
+				"value": [
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"partner_image",
+								{
+									"origin": {
+										"id": "main",
+										"url": "https://images.unsplash.com/photo-1531771686035-25f47595c87a",
+										"width": 3024,
+										"height": 3778
+									},
+									"url": "https://images.unsplash.com/photo-1531771686035-25f47595c87a",
+									"width": 3024,
+									"height": 3778,
+									"edit": {
+										"zoom": 1,
+										"crop": {
+											"x": 0,
+											"y": 0
+										},
+										"background": "transparent"
+									},
+									"alt": "law",
+									"credits": null,
+									"__TYPE__": "ImageContent",
+									"thumbnails": {}
+								}
+							],
+							[
+								"partner_heading",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "dear",
+									"type": "Text"
+								}
+							],
+							[
+								"partner_content",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "pattern",
+									"type": "Text"
+								}
+							],
+							[
+								"partner_link",
+								{
+									"key": "50d20f1c-bf10-4182-899a-da7ad2e83095",
+									"__TYPE__": "LinkContent",
+									"value": {
+										"__TYPE__": "ExternalLink",
+										"url": "https://slicemachine.dev",
+										"text": "carbon"
+									}
+								}
+							],
+							[
+								"partner_tag",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "giving",
+									"type": "Text"
+								}
+							]
+						]
+					}
+				]
+			}
+		},
+		"items": []
+	}
+]
