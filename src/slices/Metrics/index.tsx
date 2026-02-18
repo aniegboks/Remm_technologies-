@@ -96,7 +96,7 @@ const Metric: FC<MetricProps> = ({ slice }) => {
           initial={{ opacity: 0, scale: 0.98, y: 40 }}
           animate={!isLoading ? { opacity: 1, scale: 1, y: 0 } : {}}
           transition={{ duration: 1.2, ease: "easeInOut", delay: 0.3 }}
-          className="relative z-20 w-full max-w-[1200px] px-6"
+          className="relative z-20 w-full max-w-1200px px-6"
         >
           <div className="p-1 rounded-[2.5rem] bg-gradient-to-b from-slate-200/50 to-white shadow-[0_40px_100px_-20px_rgba(0,0,0,0.1)]">
             <div className="p-2 bg-white rounded-[2.3rem] border border-white shadow-inner">
