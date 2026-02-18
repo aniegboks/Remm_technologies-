@@ -66,7 +66,7 @@ const Metric: FC<MetricProps> = ({ slice }) => {
             className="inline-flex items-center gap-2 px-3 py-1 mb-8 rounded-full bg-white/50 border border-slate-200/50 backdrop-blur-sm"
           >
             <span className="text-[10px] font-mono font-bold text-slate-400 uppercase tracking-widest">
-              Catalog // {slice.id.slice(0, 6)}
+              Catalog // {slice.id.slice(0, 7)}
             </span>
           </motion.div>
 
@@ -121,7 +121,7 @@ const Metric: FC<MetricProps> = ({ slice }) => {
             <FooterItem label="Year" value="2024" />
             <div className="flex justify-end items-center">
               <span className="text-[10px] font-mono font-bold uppercase tracking-tighter text-[#034966] hover:text-black transition-colors underline underline-offset-4">
-                Dicipline → Tecnology
+                Dicipline → Tech & Software
               </span>
             </div>
           </div>
