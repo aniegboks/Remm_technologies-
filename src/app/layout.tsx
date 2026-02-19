@@ -7,7 +7,7 @@ import Footer from "@/components/footer";
 import { PrismicPreview } from "@prismicio/next";
 import { ReactLenis } from "@/utils/lenis";
 import { Analytics } from "@vercel/analytics/next";
-
+import { ChatLoader } from "@/components/ui/chat_loader.";
 const montserrat = Montserrat({
   weight: "400",
   style: "normal",
@@ -59,6 +59,7 @@ export default function RootLayout({
           className={`${jost.variable} ${montserrat.variable} antialiased bg-white text-black`}
         >
           <Header />
+          <ChatLoader />
           <main>{children}</main>
           <Footer />
           <PrismicPreview repositoryName={repositoryName} />
