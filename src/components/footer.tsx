@@ -2,7 +2,6 @@ import React from "react";
 import { createClient } from "@prismicio/client";
 import { repositoryName } from "@/prismicio";
 import { PrismicNextImage, PrismicNextLink } from "@prismicio/next";
-import { PrismicRichText } from "@prismicio/react";
 import Link from "next/link";
 import Container from "./ui/container";
 import { RevealAnimation } from "@/utils/reveal_animation";
@@ -33,9 +32,9 @@ const Footer = async () => {
   const { data } = settings;
 
   return (
-    <footer className="relative pt-48 pb-16 bg-[#FDFDFD] text-black border-t border-neutral-100 overflow-hidden">
-      {/* Large Decorative Watermark - Very Awwwards */}
-      <div className="absolute top-10 -right-20 pointer-events-none select-none opacity-[0.03]">
+    <footer className="relative pt-48 pb-16 bg-[#034966] text-white border-t border-white/10 overflow-hidden">
+      {/* Large Decorative Watermark */}
+      <div className="absolute top-10 -right-20 pointer-events-none select-none opacity-[0.05]">
         <span className="text-[10vw] font-black uppercase leading-none tracking-tighter">
           Remm Technologies
         </span>
@@ -44,7 +43,7 @@ const Footer = async () => {
       <Container>
         <RevealAnimation>
           <div className="relative z-10">
-            {/* Top Tier: Huge spacing between Logo and Newsletter */}
+            {/* Top Tier */}
             <div className="flex flex-col lg:flex-row justify-between items-start gap-32 mb-40">
               <div className="max-w-md">
                 <Link href="/" className="inline-block mb-16 group">
@@ -53,32 +52,31 @@ const Footer = async () => {
                     alt="Logo"
                     width={60}
                     height={60}
-                    objectFit="cover"
-                    className="transition-transform duration-1000 group-hover:rotate-[360deg]"
+                    className="transition-transform duration-1000 group-hover:rotate-[360deg] brightness-0 invert"
                   />
                 </Link>
-                <p className="text-[14px] md:text-[15px] leading-[1.8] tracking-tight text-neutral-500 font-light">
-                  Remm technologiesis an IT solutions company dedicated to
+                <p className="text-[14px] md:text-[15px] leading-[1.8] tracking-tight text-white/70 font-light">
+                  Remm technologies is an IT solutions company dedicated to
                   helping businesses grow through innovative and reliable
                   technology services. We provide tailored solutions that
-                  optimize operations
+                  optimize operations.
                 </p>
               </div>
 
               {/* Minimalist Large Newsletter */}
               <div className="w-full lg:w-[400px]">
-                <span className="text-[10px] font-mono uppercase tracking-[0.4em] text-neutral-400 block mb-10">
+                <span className="text-[10px] font-mono uppercase tracking-[0.4em] text-white/40 block mb-10">
                   / Newsletter Subscription
                 </span>
-                <form className="relative group border-b border-neutral-200 pb-4 focus-within:border-black transition-all duration-700">
+                <form className="relative group border-b border-white/20 pb-4 focus-within:border-white transition-all duration-700">
                   <input
                     type="email"
                     placeholder="EMAIL ADDRESS"
-                    className="bg-transparent w-full text-lg font-light outline-none placeholder:text-neutral-300 uppercase tracking-widest"
+                    className="bg-transparent w-full text-lg font-light outline-none placeholder:text-white/20 uppercase tracking-widest text-white"
                   />
                   <button
                     type="submit"
-                    className="absolute right-0 bottom-4 text-xs font-bold tracking-widest hover:text-[#034966] transition-colors"
+                    className="absolute right-0 bottom-4 text-xs font-bold tracking-widest hover:text-white/60 transition-colors"
                   >
                     SEND ↗
                   </button>
@@ -86,8 +84,8 @@ const Footer = async () => {
               </div>
             </div>
 
-            {/* Middle Tier: Wide-spread links */}
-            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-x-8 gap-y-20 mb-48 pt-20 border-t border-neutral-50">
+            {/* Middle Tier */}
+            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-x-8 gap-y-20 mb-48 pt-20 border-t border-white/5">
               <div className="lg:col-span-1">
                 <FooterColumn
                   title="Explore"
@@ -113,26 +111,25 @@ const Footer = async () => {
                 />
               </div>
 
-              {/* Massive Offset for Location to create asymmetry */}
+              {/* Office Location */}
               <div className="col-span-2 lg:col-start-5 lg:text-right">
-                <h2 className="text-[10px] font-mono font-bold uppercase tracking-[0.4em] mb-10 text-neutral-300">
+                <h2 className="text-[10px] font-mono font-bold uppercase tracking-[0.4em] mb-10 text-white/40">
                   Office
                 </h2>
-                <p className="text-sm font-medium text-neutral-800 leading-[2] uppercase tracking-wider">
+                <p className="text-sm font-medium text-white/90 leading-[2] uppercase tracking-wider">
                   Health Rite Building, LakeView pack 1 Estate opp.
                   <br />
-                  VGC Ikota shopping complex.{" "}
+                  VGC Ikota shopping complex.
                 </p>
-                <div className="mt-6 inline-flex items-center gap-2 text-[10px] font-mono text-neutral-400 lg:justify-end uppercase">
-                  <span className="w-2 h-2 rounded-full bg-green-500 shadow-[0_0_8px_rgba(34,197,94,0.6)]" />
-                  {new Date().toLocaleTimeString()}
+                <div className="mt-6 inline-flex items-center gap-2 text-[10px] font-mono text-white/40 lg:justify-end uppercase">
+                  <span className="w-2 h-2 rounded-full bg-green-400 shadow-[0_0_8px_rgba(74,222,128,0.6)]" />
                   Local Time {new Date().toLocaleTimeString()}
                 </div>
               </div>
             </div>
 
-            {/* Bottom Tier: Utility Bar */}
-            <div className="flex flex-col md:flex-row justify-between items-center gap-10 pt-10 border-t border-neutral-100">
+            {/* Bottom Tier */}
+            <div className="flex flex-col md:flex-row justify-between items-center gap-10 pt-10 border-t border-white/10">
               <div className="flex gap-10">
                 {data.socials?.map(({ icon_link, icons }, index) => (
                   <PrismicNextLink
@@ -142,21 +139,17 @@ const Footer = async () => {
                   >
                     <PrismicNextImage
                       field={icons}
-                      className="w-4 h-4 opacity-30 group-hover:opacity-100 transition-all duration-500 group-hover:-translate-y-1"
+                      className="w-4 h-4 opacity-50 group-hover:opacity-100 transition-all duration-500 group-hover:-translate-y-1 brightness-0 invert"
                     />
-                    <span className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-1 h-1 bg-black rounded-full opacity-0 group-hover:opacity-100 transition-all" />
+                    <span className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-1 h-1 bg-white rounded-full opacity-0 group-hover:opacity-100 transition-all" />
                   </PrismicNextLink>
                 ))}
               </div>
 
-              <div className="flex items-center gap-6 text-[9px] font-mono uppercase tracking-[0.5em] text-neutral-300">
+              <div className="flex items-center gap-6 text-[9px] font-mono uppercase tracking-[0.5em] text-white/30">
                 <span>© {new Date().getFullYear()} Remm Technologies</span>
-                <span className="w-px h-4 bg-neutral-200" />
+                <span className="w-px h-4 bg-white/10" />
                 <span>All Rights Reserved</span>
-                <span className="w-px h-4 bg-neutral-200" />
-                <span className="text-neutral-500">
-                  Built by Victor Aniegboka
-                </span>
               </div>
             </div>
           </div>
@@ -173,7 +166,7 @@ const FooterColumn = ({
   linkKey,
 }: FooterColumnProps) => (
   <div className="flex flex-col items-start">
-    <h2 className="text-[10px] font-mono font-bold uppercase tracking-[0.4em] mb-12 text-neutral-300">
+    <h2 className="text-[10px] font-mono font-bold uppercase tracking-[0.4em] mb-12 text-white/40">
       {`// ${title}`}
     </h2>
     <div className="flex flex-col gap-5">
@@ -181,9 +174,9 @@ const FooterColumn = ({
         <PrismicNextLink
           key={index}
           field={item[linkKey]}
-          className="group text-[12px] uppercase tracking-[0.1em] text-neutral-500 hover:text-black transition-all duration-300 flex items-center"
+          className="group text-[12px] uppercase tracking-[0.1em] text-white/60 hover:text-white transition-all duration-300 flex items-center"
         >
-          <span className="w-0 group-hover:w-4 h-[1px] bg-black transition-all duration-500 mr-0 group-hover:mr-2" />
+          <span className="w-0 group-hover:w-4 h-[1px] bg-white transition-all duration-500 mr-0 group-hover:mr-2" />
           {item[labelKey]}
         </PrismicNextLink>
       ))}
