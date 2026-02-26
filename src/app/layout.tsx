@@ -29,9 +29,9 @@ export async function generateMetadata(): Promise<Metadata> {
     const settings = await client.getSingle("settings");
 
     return {
-      title: settings.data.site_title || "Keyvera alternate",
+      title: settings.data.site_title || "Remm technologies",
       description:
-        settings.data.meta_description || "Experience the peak of real-estates",
+        settings.data.meta_description || "Our tailored solutions help your business optimize operations, enhance customer experiences, and safeguard critical data.",
       openGraph: {
         images: settings.data.og_image?.url
           ? [{ url: settings.data.og_image.url }]
@@ -41,8 +41,8 @@ export async function generateMetadata(): Promise<Metadata> {
   } catch (error) {
     console.error("Error fetching metadata:", error);
     return {
-      title: "Keyvera alternate",
-      description: "Experience the peak of real-estates",
+      title: "Remm technologies",
+      description: "Our tailored solutions help your business optimize operations, enhance customer experiences, and safeguard critical data.",
     };
   }
 }

@@ -61,26 +61,6 @@ const PartnersContent: FC<PartnersContentProps> = ({ slice }) => {
 
   return (
     <>
-      <AnimatePresence mode="wait">
-        {isLoading && (
-          <motion.div
-            key="loader"
-            exit={{ y: "-100%" }}
-            transition={{ duration: 0.8, ease: [0.76, 0, 0.24, 1] }}
-            className="fixed inset-0 z-[999] flex flex-col items-center justify-center bg-white"
-          >
-            <div className="flex flex-col items-center">
-              <span className="font-mono text-[10px] tracking-[0.4em] uppercase text-neutral-400 mb-4">
-                System.Initialize
-              </span>
-              <span className="text-7xl font-bold tabular-nums tracking-tighter">
-                {progress}%
-              </span>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-
       <main ref={containerRef} className="relative bg-white text-[#1a1a1a]">
         {/* --- WHY SECTION: VERTICAL STICKY STACK --- */}
         <section className="bg-[#f8f8f8] py-32 rounded-t-[3rem] md:rounded-t-[5rem] relative z-20">

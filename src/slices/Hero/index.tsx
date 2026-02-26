@@ -35,7 +35,6 @@ export default function Hero({ slice }: HeroProps) {
 
   return (
     <>
-    <Loading />
       <section
         data-slice-type={slice.slice_type}
         data-slice-variation={slice.variation}

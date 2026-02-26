@@ -41,13 +41,9 @@ const Metric: FC<MetricProps> = ({ slice }) => {
       alt: item.gal_img.alt || "Portfolio perspective",
     }));
 
-  const ease = [0.76, 0, 0.24, 1];
 
   return (
     <>
-      {/* 1. INITIALIZE LOADER */}
-      <Loading />
-
       {/* 2. MAIN SECTION CONTENT */}
       <section className="relative w-full min-h-screen bg-[#FCFCFC] flex flex-col items-center pt-32 pb-24 overflow-hidden selection:bg-black selection:text-white">
         
