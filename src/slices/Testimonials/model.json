@@ -1,52 +1,52 @@
 {
-  "id": "testimonials",
-  "type": "SharedSlice",
-  "name": "Testimonials",
   "description": "Testimonials",
+  "id": "testimonials",
+  "name": "Testimonials",
+  "type": "SharedSlice",
   "variations": [
     {
-      "id": "default",
-      "name": "Default",
-      "docURL": "...",
-      "version": "initial",
       "description": "Default",
-      "imageUrl": "",
+      "docURL": "...",
+      "id": "default",
+      "imageUrl": "https://images.prismic.io/prismicprojecta/shared-slices/testimonials/default/fcf26544716b0e2e9e0c076e49b456f65a8a752c.png?auto=compress%2Cformat",
+      "items": {},
+      "name": "Default",
       "primary": {
         "testimonials": {
-          "type": "Group",
           "config": {
-            "label": "Testimonials",
-            "repeat": true,
             "fields": {
               "testimonial_image": {
-                "type": "Image",
                 "config": {
-                  "label": "testimonial image",
                   "constraint": {},
+                  "label": "testimonial image",
                   "thumbnails": []
-                }
+                },
+                "type": "Image"
               },
               "heading": {
-                "type": "StructuredText",
                 "config": {
-                  "label": "Heading ",
-                  "placeholder": "",
                   "allowTargetBlank": true,
-                  "multi": "heading1,heading2"
-                }
+                  "label": "Heading ",
+                  "multi": "heading1,heading2",
+                  "placeholder": ""
+                },
+                "type": "StructuredText"
               },
               "paragraph": {
-                "type": "Text",
                 "config": {
                   "label": "paragraph",
                   "placeholder": ""
-                }
+                },
+                "type": "Text"
               }
-            }
-          }
+            },
+            "label": "Testimonials",
+            "repeat": true
+          },
+          "type": "Group"
         }
       },
-      "items": {}
+      "version": "initial"
     }
   ]
 }

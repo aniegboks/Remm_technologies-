@@ -1,36 +1,36 @@
 {
-  "id": "cta",
-  "type": "SharedSlice",
-  "name": "Cta",
   "description": "Cta",
+  "id": "cta",
+  "name": "Cta",
+  "type": "SharedSlice",
   "variations": [
     {
-      "id": "default",
-      "name": "Default",
-      "docURL": "...",
-      "version": "initial",
       "description": "Default",
-      "imageUrl": "",
+      "docURL": "...",
+      "id": "default",
+      "imageUrl": "https://images.prismic.io/prismicprojecta/shared-slices/cta/default/101d34bed04c8168b2ec9c326c71e8b3d1883baf.png?auto=compress%2Cformat",
+      "items": {},
+      "name": "Default",
       "primary": {
         "cta_img": {
-          "type": "Image",
           "config": {
-            "label": "cta img",
             "constraint": {},
+            "label": "cta img",
             "thumbnails": []
-          }
+          },
+          "type": "Image"
         },
         "cta_heading": {
-          "type": "StructuredText",
           "config": {
-            "label": "cta heading",
-            "placeholder": "",
             "allowTargetBlank": true,
-            "multi": "heading1,heading2,heading3,heading4,heading5,heading6,strong,em"
-          }
+            "label": "cta heading",
+            "multi": "heading1,heading2,heading3,heading4,heading5,heading6,strong,em",
+            "placeholder": ""
+          },
+          "type": "StructuredText"
         }
       },
-      "items": {}
+      "version": "initial"
     }
   ]
 }

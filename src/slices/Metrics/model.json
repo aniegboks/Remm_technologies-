@@ -1,82 +1,82 @@
 {
-  "id": "content",
-  "type": "SharedSlice",
-  "name": "Metrics",
   "description": "Content",
+  "id": "content",
+  "name": "Metrics",
+  "type": "SharedSlice",
   "variations": [
     {
-      "id": "default",
-      "name": "Default",
-      "docURL": "...",
-      "version": "initial",
       "description": "Default",
-      "imageUrl": "",
+      "docURL": "...",
+      "id": "default",
+      "imageUrl": "https://images.prismic.io/prismicprojecta/shared-slices/content/default/0618a66336957d67b19572d4e55ae39b5d42d843.png?auto=compress%2Cformat",
+      "items": {},
+      "name": "Default",
       "primary": {
         "title": {
-          "type": "StructuredText",
           "config": {
-            "label": "title",
-            "placeholder": "",
             "allowTargetBlank": true,
-            "multi": "heading1,heading2,heading3,heading4,heading5,heading6,strong,em"
-          }
+            "label": "title",
+            "multi": "heading1,heading2,heading3,heading4,heading5,heading6,strong,em",
+            "placeholder": ""
+          },
+          "type": "StructuredText"
         },
         "geo": {
-          "type": "Text",
           "config": {
             "label": "geo",
             "placeholder": ""
-          }
+          },
+          "type": "Text"
         },
         "over_paragraph": {
-          "type": "Text",
           "config": {
             "label": "over paragraph",
             "placeholder": ""
-          }
+          },
+          "type": "Text"
         },
         "overview": {
-          "type": "Group",
           "config": {
-            "label": "overview",
-            "repeat": true,
             "fields": {
               "stat_result": {
-                "type": "Text",
                 "config": {
                   "label": "stat result",
                   "placeholder": ""
-                }
+                },
+                "type": "Text"
               },
               "al_stat": {
-                "type": "Text",
                 "config": {
                   "label": "al stat",
                   "placeholder": ""
-                }
+                },
+                "type": "Text"
               }
-            }
-          }
+            },
+            "label": "overview",
+            "repeat": true
+          },
+          "type": "Group"
         },
         "gallery_img": {
-          "type": "Group",
           "config": {
-            "label": "gallery img",
-            "repeat": true,
             "fields": {
               "gal_img": {
-                "type": "Image",
                 "config": {
-                  "label": "gal img",
                   "constraint": {},
+                  "label": "gal img",
                   "thumbnails": []
-                }
+                },
+                "type": "Image"
               }
-            }
-          }
+            },
+            "label": "gallery img",
+            "repeat": true
+          },
+          "type": "Group"
         }
       },
-      "items": {}
+      "version": "initial"
     }
   ]
 }

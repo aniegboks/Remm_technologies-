@@ -1,83 +1,83 @@
 {
-  "id": "properties",
-  "type": "SharedSlice",
-  "name": "Properties",
   "description": "Properties",
+  "id": "properties",
+  "name": "Properties",
+  "type": "SharedSlice",
   "variations": [
     {
-      "id": "alternate",
-      "name": "default",
-      "docURL": "...",
-      "version": "initial",
       "description": "Default",
-      "imageUrl": "",
+      "docURL": "...",
+      "id": "alternate",
+      "imageUrl": "https://images.prismic.io/prismicprojecta/shared-slices/properties/alternate/608266d7a2021a9b8d7f0d4b2d3936e17c55da98.png?auto=compress%2Cformat",
+      "items": {},
+      "name": "default",
       "primary": {
         "heading": {
-          "type": "StructuredText",
           "config": {
-            "label": "heading",
-            "placeholder": "",
             "allowTargetBlank": true,
-            "multi": "heading1,strong,em,heading2,heading3"
-          }
+            "label": "heading",
+            "multi": "heading1,strong,em,heading2,heading3",
+            "placeholder": ""
+          },
+          "type": "StructuredText"
         },
         "paragraph": {
-          "type": "StructuredText",
           "config": {
-            "label": "paragraph",
-            "placeholder": "",
             "allowTargetBlank": true,
-            "multi": "paragraph,strong,em"
-          }
+            "label": "paragraph",
+            "multi": "paragraph,strong,em",
+            "placeholder": ""
+          },
+          "type": "StructuredText"
         },
         "image_navigator": {
-          "type": "Group",
           "config": {
-            "label": "image navigator",
-            "repeat": true,
             "fields": {
               "navigator_link": {
-                "type": "Link",
                 "config": {
-                  "label": "navigator link",
-                  "placeholder": "",
-                  "select": null,
                   "allowTargetBlank": true,
                   "allowText": true,
-                  "repeat": false
-                }
+                  "label": "navigator link",
+                  "placeholder": "",
+                  "repeat": false,
+                  "select": null
+                },
+                "type": "Link"
               },
               "display_img": {
-                "type": "Image",
                 "config": {
-                  "label": "display img",
                   "constraint": {},
+                  "label": "display img",
                   "thumbnails": []
-                }
+                },
+                "type": "Image"
               },
               "heading": {
-                "type": "StructuredText",
                 "config": {
-                  "label": "heading",
-                  "placeholder": "",
                   "allowTargetBlank": true,
-                  "multi": "heading1,heading2,heading3,heading4,heading5,heading6,strong,em"
-                }
+                  "label": "heading",
+                  "multi": "heading1,heading2,heading3,heading4,heading5,heading6,strong,em",
+                  "placeholder": ""
+                },
+                "type": "StructuredText"
               },
               "paragraph": {
-                "type": "StructuredText",
                 "config": {
-                  "label": "paragraph",
-                  "placeholder": "",
                   "allowTargetBlank": true,
-                  "multi": "paragraph,strong,em"
-                }
+                  "label": "paragraph",
+                  "multi": "paragraph,strong,em",
+                  "placeholder": ""
+                },
+                "type": "StructuredText"
               }
-            }
-          }
+            },
+            "label": "image navigator",
+            "repeat": true
+          },
+          "type": "Group"
         }
       },
-      "items": {}
+      "version": "initial"
     }
   ]
 }

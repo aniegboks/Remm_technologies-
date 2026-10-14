@@ -1,127 +1,127 @@
 {
-  "id": "about",
-  "type": "SharedSlice",
-  "name": "About",
   "description": "About",
+  "id": "about",
+  "name": "About",
+  "type": "SharedSlice",
   "variations": [
     {
-      "id": "default",
-      "name": "Default",
-      "docURL": "...",
-      "version": "initial",
       "description": "Default",
-      "imageUrl": "",
+      "docURL": "...",
+      "id": "default",
+      "imageUrl": "https://images.prismic.io/prismicprojecta/shared-slices/about/default/80e4d27599b7860a66038ef123355f704776969d.png?auto=compress%2Cformat",
+      "items": {},
+      "name": "Default",
       "primary": {
         "caption": {
-          "type": "StructuredText",
           "config": {
-            "label": "caption",
-            "placeholder": "",
             "allowTargetBlank": true,
-            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em"
-          }
+            "label": "caption",
+            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em",
+            "placeholder": ""
+          },
+          "type": "StructuredText"
         },
         "links": {
-          "type": "Group",
           "config": {
-            "label": "links",
-            "repeat": true,
             "fields": {
               "about": {
-                "type": "Link",
                 "config": {
-                  "label": "link",
-                  "placeholder": "",
-                  "select": null,
                   "allowTargetBlank": true,
                   "allowText": true,
-                  "repeat": false
-                }
+                  "label": "link",
+                  "placeholder": "",
+                  "repeat": false,
+                  "select": null
+                },
+                "type": "Link"
               },
               "label": {
-                "type": "Text",
                 "config": {
                   "label": "label",
                   "placeholder": ""
-                }
+                },
+                "type": "Text"
               }
-            }
-          }
+            },
+            "label": "links",
+            "repeat": true
+          },
+          "type": "Group"
         },
         "history": {
-          "type": "StructuredText",
           "config": {
-            "label": "history",
-            "placeholder": "",
             "allowTargetBlank": true,
-            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em"
-          }
+            "label": "history",
+            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em",
+            "placeholder": ""
+          },
+          "type": "StructuredText"
         },
         "about_img": {
-          "type": "Image",
           "config": {
-            "label": "about img",
             "constraint": {},
+            "label": "about img",
             "thumbnails": []
-          }
+          },
+          "type": "Image"
         }
       },
-      "items": {}
+      "version": "initial"
     },
     {
-      "id": "alternate",
-      "name": "alternate",
-      "docURL": "...",
-      "version": "initial",
       "description": "Default",
-      "imageUrl": "",
+      "docURL": "...",
+      "id": "alternate",
+      "imageUrl": "https://images.prismic.io/prismicprojecta/shared-slices/about/alternate/80e4d27599b7860a66038ef123355f704776969d.png?auto=compress%2Cformat",
+      "items": {},
+      "name": "alternate",
       "primary": {
         "caption": {
-          "type": "StructuredText",
           "config": {
-            "label": "caption",
-            "placeholder": "",
             "allowTargetBlank": true,
-            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em"
-          }
+            "label": "caption",
+            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em",
+            "placeholder": ""
+          },
+          "type": "StructuredText"
         },
         "links": {
-          "type": "Group",
           "config": {
-            "label": "links",
-            "repeat": true,
             "fields": {
               "about": {
-                "type": "Link",
                 "config": {
-                  "label": "link",
-                  "placeholder": "",
-                  "select": null,
                   "allowTargetBlank": true,
                   "allowText": true,
-                  "repeat": false
-                }
+                  "label": "link",
+                  "placeholder": "",
+                  "repeat": false,
+                  "select": null
+                },
+                "type": "Link"
               },
               "label": {
-                "type": "Text",
                 "config": {
                   "label": "label",
                   "placeholder": ""
-                }
+                },
+                "type": "Text"
               }
-            }
-          }
+            },
+            "label": "links",
+            "repeat": true
+          },
+          "type": "Group"
         },
         "about_img": {
-          "type": "Image",
           "config": {
-            "label": "about_img",
             "constraint": {},
+            "label": "about_img",
             "thumbnails": []
-          }
+          },
+          "type": "Image"
         }
       },
-      "items": {}
+      "version": "initial"
     }
   ]
 }

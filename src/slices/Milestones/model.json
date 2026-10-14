@@ -1,67 +1,67 @@
 {
-  "id": "milestones",
-  "type": "SharedSlice",
-  "name": "Milestones",
   "description": "Milestones",
+  "id": "milestones",
+  "name": "Milestones",
+  "type": "SharedSlice",
   "variations": [
     {
-      "id": "default",
-      "name": "Default",
-      "docURL": "...",
-      "version": "initial",
       "description": "Default",
-      "imageUrl": "",
+      "docURL": "...",
+      "id": "default",
+      "imageUrl": "https://images.prismic.io/prismicprojecta/shared-slices/milestones/default/fabf3caea7b5b6419965e11c64aab729616702fe.png?auto=compress%2Cformat",
+      "items": {},
+      "name": "Default",
       "primary": {
         "port_heading": {
-          "type": "Text",
           "config": {
             "label": "port heading",
             "placeholder": ""
-          }
+          },
+          "type": "Text"
         },
         "port_sub_heading": {
-          "type": "Text",
           "config": {
             "label": "port sub heading",
             "placeholder": ""
-          }
+          },
+          "type": "Text"
         },
         "port_paragraph": {
-          "type": "Text",
           "config": {
             "label": "port paragraph",
             "placeholder": ""
-          }
+          },
+          "type": "Text"
         },
         "heading": {
-          "type": "StructuredText",
           "config": {
-            "label": "heading",
-            "placeholder": "",
             "allowTargetBlank": true,
-            "multi": "heading1,heading2,heading3,strong,em"
-          }
+            "label": "heading",
+            "multi": "heading1,heading2,heading3,strong,em",
+            "placeholder": ""
+          },
+          "type": "StructuredText"
         },
         "sub_heading": {
-          "type": "StructuredText",
           "config": {
-            "label": "sub heading",
-            "placeholder": "",
             "allowTargetBlank": true,
-            "multi": "heading2,heading3,heading4,heading5,heading6,strong,em,heading1"
-          }
+            "label": "sub heading",
+            "multi": "heading2,heading3,heading4,heading5,heading6,strong,em,heading1",
+            "placeholder": ""
+          },
+          "type": "StructuredText"
         },
         "paragraph": {
-          "type": "StructuredText",
           "config": {
-            "label": "paragraph",
-            "placeholder": "",
             "allowTargetBlank": true,
-            "multi": "strong,em,paragraph"
-          }
+            "label": "paragraph",
+            "multi": "strong,em,paragraph",
+            "placeholder": ""
+          },
+          "type": "StructuredText"
         }
       },
-      "items": {}
+      "version": "initial"
     }
   ]
 }

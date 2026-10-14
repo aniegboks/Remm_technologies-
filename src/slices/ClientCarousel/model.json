@@ -1,86 +1,86 @@
 {
-  "id": "client_carousel",
-  "type": "SharedSlice",
-  "name": "ClientCarousel",
   "description": "ClientCarousel",
+  "id": "client_carousel",
+  "name": "ClientCarousel",
+  "type": "SharedSlice",
   "variations": [
     {
-      "id": "default",
-      "name": "Default",
-      "docURL": "...",
-      "version": "initial",
       "description": "Default",
-      "imageUrl": "",
+      "docURL": "...",
+      "id": "default",
+      "imageUrl": "https://images.prismic.io/prismicprojecta/shared-slices/client_carousel/default/63da0b0569aae7fa6481d17049fc22eed5a291e1.png?auto=compress%2Cformat",
+      "items": {},
+      "name": "Default",
       "primary": {
         "clients_heading": {
-          "type": "Text",
           "config": {
             "label": "clients_heading",
             "placeholder": ""
-          }
+          },
+          "type": "Text"
         },
         "client_paragraph": {
-          "type": "Text",
           "config": {
             "label": "client_paragraph",
             "placeholder": ""
-          }
+          },
+          "type": "Text"
         },
         "client_button": {
-          "type": "Group",
           "config": {
-            "label": "client_button",
-            "repeat": true,
             "fields": {
               "client_label": {
-                "type": "Text",
                 "config": {
                   "label": "client_label",
                   "placeholder": ""
-                }
+                },
+                "type": "Text"
               },
               "client_link": {
-                "type": "Link",
                 "config": {
-                  "label": "client_link",
-                  "placeholder": "",
-                  "select": null,
                   "allowTargetBlank": true,
                   "allowText": true,
-                  "repeat": false
-                }
+                  "label": "client_link",
+                  "placeholder": "",
+                  "repeat": false,
+                  "select": null
+                },
+                "type": "Link"
               }
-            }
-          }
+            },
+            "label": "client_button",
+            "repeat": true
+          },
+          "type": "Group"
         },
         "client_group": {
-          "type": "Group",
           "config": {
-            "label": "client_group",
-            "repeat": true,
             "fields": {
               "client_img": {
-                "type": "Image",
                 "config": {
-                  "label": "client_img",
                   "constraint": {},
+                  "label": "client_img",
                   "thumbnails": []
-                }
+                },
+                "type": "Image"
               },
               "client_name": {
-                "type": "StructuredText",
                 "config": {
-                  "label": "client_name ",
-                  "placeholder": "",
                   "allowTargetBlank": true,
-                  "multi": "heading1,heading2"
-                }
+                  "label": "client_name ",
+                  "multi": "heading1,heading2",
+                  "placeholder": ""
+                },
+                "type": "StructuredText"
               }
-            }
-          }
+            },
+            "label": "client_group",
+            "repeat": true
+          },
+          "type": "Group"
         }
       },
-      "items": {}
+      "version": "initial"
     }
   ]
 }

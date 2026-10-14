@@ -1,155 +1,158 @@
 {
   "format": "custom",
   "id": "settings",
-  "label": "Settings",
-  "repeatable": false,
-  "status": true,
   "json": {
     "Main": {
       "site_title": {
-        "type": "Text",
         "config": {
           "label": "site title",
           "placeholder": ""
-        }
+        },
+        "type": "Text"
       },
       "meta_description": {
-        "type": "Text",
         "config": {
           "label": "meta description",
           "placeholder": ""
-        }
+        },
+        "type": "Text"
       },
       "paragraph": {
-        "type": "StructuredText",
         "config": {
-          "label": "paragraph",
-          "placeholder": "",
           "allowTargetBlank": true,
-          "multi": "paragraph,strong,em"
-        }
+          "label": "paragraph",
+          "multi": "paragraph,strong,em",
+          "placeholder": ""
+        },
+        "type": "StructuredText"
       },
       "navigation": {
-        "type": "Group",
         "config": {
-          "label": "navigation",
-          "repeat": true,
           "fields": {
             "link": {
-              "type": "Link",
               "config": {
-                "label": "link",
-                "placeholder": "",
-                "select": null,
                 "allowTargetBlank": true,
                 "allowText": true,
-                "repeat": false
-              }
+                "label": "link",
+                "placeholder": "",
+                "repeat": false,
+                "select": null
+              },
+              "type": "Link"
             },
             "label": {
-              "type": "Text",
               "config": {
                 "label": "label",
                 "placeholder": ""
-              }
+              },
+              "type": "Text"
             }
-          }
-        }
+          },
+          "label": "navigation",
+          "repeat": true
+        },
+        "type": "Group"
       },
       "og_image": {
-        "type": "Image",
         "config": {
-          "label": "og image",
           "constraint": {},
+          "label": "og image",
           "thumbnails": []
-        }
+        },
+        "type": "Image"
       },
       "cta": {
-        "type": "Group",
         "config": {
-          "label": "cta",
-          "repeat": true,
           "fields": {
             "cta_link": {
-              "type": "Link",
               "config": {
-                "label": "cta link",
-                "placeholder": "",
-                "select": null,
                 "allowTargetBlank": true,
                 "allowText": true,
-                "repeat": false
-              }
+                "label": "cta link",
+                "placeholder": "",
+                "repeat": false,
+                "select": null
+              },
+              "type": "Link"
             },
             "cta_label": {
-              "type": "Text",
               "config": {
                 "label": "cta label",
                 "placeholder": ""
-              }
+              },
+              "type": "Text"
             }
-          }
-        }
+          },
+          "label": "cta",
+          "repeat": true
+        },
+        "type": "Group"
       },
       "socials": {
-        "type": "Group",
         "config": {
-          "label": "socials",
-          "repeat": true,
           "fields": {
             "icons": {
-              "type": "Image",
               "config": {
-                "label": "icons",
                 "constraint": {},
+                "label": "icons",
                 "thumbnails": []
-              }
+              },
+              "type": "Image"
             },
             "icon_link": {
-              "type": "Link",
               "config": {
+                "allowTargetBlank": true,
+                "allowText": true,
                 "label": "icon link",
                 "placeholder": "",
-                "select": null,
-                "allowTargetBlank": true,
-                "allowText": true,
-                "repeat": false
-              }
+                "repeat": false,
+                "select": null
+              },
+              "type": "Link"
             }
-          }
-        }
+          },
+          "label": "socials",
+          "repeat": true
+        },
+        "type": "Group"
       },
       "lega": {
-        "type": "Group",
         "config": {
-          "label": "legal",
-          "repeat": true,
           "fields": {
             "legal_link": {
-              "type": "Link",
               "config": {
-                "label": "legal link",
-                "placeholder": "",
-                "select": null,
                 "allowTargetBlank": true,
                 "allowText": true,
-                "repeat": false
-              }
+                "label": "legal link",
+                "placeholder": "",
+                "repeat": false,
+                "select": null
+              },
+              "type": "Link"
             },
             "legal_label": {
-              "type": "Text",
               "config": {
                 "label": "legal label",
                 "placeholder": ""
-              }
+              },
+              "type": "Text"
             }
-          }
-        }
+          },
+          "label": "legal",
+          "repeat": true
+        },
+        "type": "Group"
       },
       "slices": {
-        "type": "Slices",
-        "fieldset": "Slice Zone"
+        "config": {
+          "choices": {}
+        },
+        "fieldset": "Slice Zone",
+        "type": "Slices"
       }
     }
-  }
+  },
+  "label": "Settings",
+  "repeatable": false,
+  "status": true
 }

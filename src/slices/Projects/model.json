@@ -1,108 +1,108 @@
 {
-  "id": "recent",
-  "type": "SharedSlice",
-  "name": "Projects",
   "description": "Recent",
+  "id": "recent",
+  "name": "Projects",
+  "type": "SharedSlice",
   "variations": [
     {
-      "id": "default",
-      "name": "Default",
-      "docURL": "...",
-      "version": "initial",
       "description": "Default",
-      "imageUrl": "",
+      "docURL": "...",
+      "id": "default",
+      "imageUrl": "https://images.prismic.io/prismicprojecta/shared-slices/recent/default/6ca32d2d1f5c7cc124c9b3d679906e1865ccbda0.png?auto=compress%2Cformat",
+      "items": {},
+      "name": "Default",
       "primary": {
         "heading": {
-          "type": "StructuredText",
           "config": {
-            "label": "heading",
-            "placeholder": "",
             "allowTargetBlank": true,
-            "multi": "heading3,heading4,heading5,heading6,strong,em"
-          }
+            "label": "heading",
+            "multi": "heading3,heading4,heading5,heading6,strong,em",
+            "placeholder": ""
+          },
+          "type": "StructuredText"
         },
         "paragraph": {
-          "type": "StructuredText",
           "config": {
-            "label": "paragraph",
-            "placeholder": "",
             "allowTargetBlank": true,
-            "multi": "paragraph,strong,em"
-          }
+            "label": "paragraph",
+            "multi": "paragraph,strong,em",
+            "placeholder": ""
+          },
+          "type": "StructuredText"
         },
         "navigator": {
-          "type": "Group",
           "config": {
-            "label": "navigator",
-            "repeat": true,
             "fields": {
               "link": {
-                "type": "Link",
                 "config": {
-                  "label": "link",
-                  "placeholder": "",
-                  "select": null,
                   "allowTargetBlank": true,
                   "allowText": true,
-                  "repeat": false
-                }
+                  "label": "link",
+                  "placeholder": "",
+                  "repeat": false,
+                  "select": null
+                },
+                "type": "Link"
               },
               "label": {
-                "type": "Text",
                 "config": {
                   "label": "label",
                   "placeholder": ""
-                }
+                },
+                "type": "Text"
               }
-            }
-          }
+            },
+            "label": "navigator",
+            "repeat": true
+          },
+          "type": "Group"
         },
         "image_navigator": {
-          "type": "Group",
           "config": {
-            "label": "image navigator",
-            "repeat": true,
             "fields": {
               "display_img": {
-                "type": "Image",
                 "config": {
-                  "label": "display img",
                   "constraint": {
                     "height": null
                   },
+                  "label": "display img",
                   "thumbnails": []
-                }
+                },
+                "type": "Image"
               },
               "display_link": {
-                "type": "Link",
                 "config": {
-                  "label": "display link",
-                  "placeholder": "",
-                  "select": null,
                   "allowTargetBlank": true,
                   "allowText": true,
-                  "repeat": false
-                }
+                  "label": "display link",
+                  "placeholder": "",
+                  "repeat": false,
+                  "select": null
+                },
+                "type": "Link"
               },
               "display_text": {
-                "type": "Text",
                 "config": {
                   "label": "display text",
                   "placeholder": ""
-                }
+                },
+                "type": "Text"
               },
               "display_geo": {
-                "type": "Text",
                 "config": {
                   "label": "display geo",
                   "placeholder": ""
-                }
+                },
+                "type": "Text"
               }
-            }
-          }
+            },
+            "label": "image navigator",
+            "repeat": true
+          },
+          "type": "Group"
         }
       },
-      "items": {}
+      "version": "initial"
     }
   ]
 }
