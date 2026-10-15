@@ -38,6 +38,9 @@
             },
             "hero": {
               "type": "SharedSlice"
+            },
+            "promo_banner": {
+              "type": "SharedSlice"
             }
           }
         },
