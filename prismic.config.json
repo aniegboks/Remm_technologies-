@@ -1,0 +1,32 @@
+{
+  "repositoryName": "prismicprojecta",
+  "libraries": [
+    "./src/slices"
+  ],
+  "routes": [
+    {
+      "type": "home_page",
+      "path": "/"
+    },
+    {
+      "type": "blog",
+      "path": "/blog"
+    },
+    {
+      "type": "page",
+      "path": "/:uid"
+    },
+    {
+      "type": "content",
+      "path": "/services/:uid"
+    },
+    {
+      "type": "content",
+      "path": "/partners/:uid"
+    },
+    {
+      "type": "content",
+      "path": "/blog/:uid"
+    }
+  ]
+}

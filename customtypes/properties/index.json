@@ -1,14 +1,9 @@
 {
   "format": "page",
   "id": "properties",
-  "label": "properties",
-  "repeatable": false,
-  "status": true,
   "json": {
     "Main": {
       "slices": {
-        "type": "Slices",
-        "fieldset": "Slice Zone",
         "config": {
           "choices": {
             "partner_cards": {
@@ -30,7 +25,9 @@
               "type": "SharedSlice"
             }
           }
-        }
+        },
+        "fieldset": "Slice Zone",
+        "type": "Slices"
       }
     },
     "SEO & Metadata": {
@@ -60,5 +57,8 @@
         "type": "Image"
       }
     }
-  }
+  },
+  "label": "properties",
+  "repeatable": false,
+  "status": true
 }

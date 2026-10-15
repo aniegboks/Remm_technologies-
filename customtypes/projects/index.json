@@ -1,14 +1,9 @@
 {
   "format": "page",
   "id": "projects",
-  "label": "projects",
-  "repeatable": false,
-  "status": true,
   "json": {
     "Main": {
       "slices": {
-        "type": "Slices",
-        "fieldset": "Slice Zone",
         "config": {
           "choices": {
             "testimonials": {
@@ -24,7 +19,9 @@
               "type": "SharedSlice"
             }
           }
-        }
+        },
+        "fieldset": "Slice Zone",
+        "type": "Slices"
       }
     },
     "SEO & Metadata": {
@@ -54,5 +51,8 @@
         "type": "Image"
       }
     }
-  }
+  },
+  "label": "projects",
+  "repeatable": false,
+  "status": true
 }

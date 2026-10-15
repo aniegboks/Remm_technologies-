@@ -4,8 +4,7 @@ import {
   type Route,
 } from "@prismicio/client";
 import { enableAutoPreviews } from "@prismicio/next";
-import sm from "../slicemachine.config.json";
-
+import sm from "../prismic.config.json";
 /**
  * The project's Prismic repository name.
  */
@@ -22,9 +21,9 @@ const routes: Route[] = [
   // Examples:
   { type: "home_page", path: "/" },
   { type: "page", path: "/:uid" },
-  { type: "content", path: "/services/:uid"},
-  { type: "content", path: "/partners/:uid"},
-  { type: "content", path: "/blog/:uid"},
+  { type: "content", path: "/services/:uid" },
+  { type: "content", path: "/partners/:uid" },
+  { type: "content", path: "/blog/:uid" },
 
 
 ];
