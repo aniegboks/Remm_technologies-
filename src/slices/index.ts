@@ -12,6 +12,7 @@ import Milestones from "./Milestones";
 import PartnerCards from "./PartnerCards";
 import PartnersCarousel from "./PartnersCarousel";
 import PartnersContent from "./PartnersContent";
+import PromoBanner from "./PromoBanner";
 import Properties from "./Properties";
 import Projects from "./Projects";
 import Testimonials from "./Testimonials";
@@ -29,6 +30,7 @@ export const components = {
 	partner_cards: PartnerCards,
 	partners_carousel: PartnersCarousel,
 	partners_content: PartnersContent,
+	promo_banner: PromoBanner,
 	properties: Properties,
 	recent: Projects,
 	testimonials: Testimonials

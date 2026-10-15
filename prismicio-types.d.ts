@@ -71,7 +71,7 @@ interface BlogDocumentData {
 	 * - **Documentation**: https://prismic.io/docs/fields/text
 	 */
 	meta_title: prismic.KeyTextField;
-
+	
 	/**
 	 * Meta Description field in *blog*
 	 *
@@ -82,7 +82,7 @@ interface BlogDocumentData {
 	 * - **Documentation**: https://prismic.io/docs/fields/text
 	 */
 	meta_description: prismic.KeyTextField;
-
+	
 	/**
 	 * Meta Image field in *blog*
 	 *
@@ -131,7 +131,7 @@ interface ContentDocumentData {
 	 * - **Documentation**: https://prismic.io/docs/fields/text
 	 */
 	meta_title: prismic.KeyTextField;
-
+	
 	/**
 	 * Meta Description field in *content*
 	 *
@@ -142,7 +142,7 @@ interface ContentDocumentData {
 	 * - **Documentation**: https://prismic.io/docs/fields/text
 	 */
 	meta_description: prismic.KeyTextField;
-
+	
 	/**
 	 * Meta Image field in *content*
 	 *
@@ -182,7 +182,7 @@ interface HomePageDocumentData {
 	 * - **Documentation**: https://prismic.io/docs/fields/text
 	 */
 	title: prismic.KeyTextField;
-
+	
 	/**
 	 * Slice Zone field in *home page*
 	 *
@@ -202,7 +202,7 @@ interface HomePageDocumentData {
 	 * - **Documentation**: https://prismic.io/docs/fields/text
 	 */
 	meta_title: prismic.KeyTextField;
-
+	
 	/**
 	 * Meta Description field in *home page*
 	 *
@@ -213,7 +213,7 @@ interface HomePageDocumentData {
 	 * - **Documentation**: https://prismic.io/docs/fields/text
 	 */
 	meta_description: prismic.KeyTextField;
-
+	
 	/**
 	 * Meta Image field in *home page*
 	 *
@@ -237,7 +237,7 @@ interface HomePageDocumentData {
  */
 export type HomePageDocument<Lang extends string = string> = prismic.PrismicDocumentWithoutUID<Simplify<HomePageDocumentData>, "home_page", Lang>;
 
-type PageDocumentDataSlicesSlice = PartnersContentSlice | PartnersCarouselSlice | RecentSlice | CtaSlice | FaqSlice | PropertiesSlice | MilestonesSlice | AboutSlice | HeroSlice
+type PageDocumentDataSlicesSlice = PartnersContentSlice | PartnersCarouselSlice | RecentSlice | CtaSlice | FaqSlice | PropertiesSlice | MilestonesSlice | AboutSlice | HeroSlice | PromoBannerSlice
 
 /**
  * Content for page documents
@@ -262,7 +262,7 @@ interface PageDocumentData {
 	 * - **Documentation**: https://prismic.io/docs/fields/text
 	 */
 	meta_title: prismic.KeyTextField;
-
+	
 	/**
 	 * Meta Description field in *page*
 	 *
@@ -273,7 +273,7 @@ interface PageDocumentData {
 	 * - **Documentation**: https://prismic.io/docs/fields/text
 	 */
 	meta_description: prismic.KeyTextField;
-
+	
 	/**
 	 * Meta Image field in *page*
 	 *
@@ -322,7 +322,7 @@ interface ProjectsDocumentData {
 	 * - **Documentation**: https://prismic.io/docs/fields/text
 	 */
 	meta_title: prismic.KeyTextField;
-
+	
 	/**
 	 * Meta Description field in *projects*
 	 *
@@ -333,7 +333,7 @@ interface ProjectsDocumentData {
 	 * - **Documentation**: https://prismic.io/docs/fields/text
 	 */
 	meta_description: prismic.KeyTextField;
-
+	
 	/**
 	 * Meta Image field in *projects*
 	 *
@@ -382,7 +382,7 @@ interface PropertiesDocumentData {
 	 * - **Documentation**: https://prismic.io/docs/fields/text
 	 */
 	meta_title: prismic.KeyTextField;
-
+	
 	/**
 	 * Meta Description field in *properties*
 	 *
@@ -393,7 +393,7 @@ interface PropertiesDocumentData {
 	 * - **Documentation**: https://prismic.io/docs/fields/text
 	 */
 	meta_description: prismic.KeyTextField;
-
+	
 	/**
 	 * Meta Image field in *properties*
 	 *
@@ -430,7 +430,7 @@ export interface SettingsDocumentDataNavigationItem {
 	 * - **Documentation**: https://prismic.io/docs/fields/link
 	 */
 	link: prismic.LinkField<string, string, unknown, prismic.FieldState, never>;
-
+	
 	/**
 	 * label field in *Settings → navigation*
 	 *
@@ -455,7 +455,7 @@ export interface SettingsDocumentDataCtaItem {
 	 * - **Documentation**: https://prismic.io/docs/fields/link
 	 */
 	cta_link: prismic.LinkField<string, string, unknown, prismic.FieldState, never>;
-
+	
 	/**
 	 * cta label field in *Settings → cta*
 	 *
@@ -480,7 +480,7 @@ export interface SettingsDocumentDataSocialsItem {
 	 * - **Documentation**: https://prismic.io/docs/fields/image
 	 */
 	icons: prismic.ImageField<never>;
-
+	
 	/**
 	 * icon link field in *Settings → socials*
 	 *
@@ -505,7 +505,7 @@ export interface SettingsDocumentDataLegaItem {
 	 * - **Documentation**: https://prismic.io/docs/fields/link
 	 */
 	legal_link: prismic.LinkField<string, string, unknown, prismic.FieldState, never>;
-
+	
 	/**
 	 * legal label field in *Settings → legal*
 	 *
@@ -533,7 +533,7 @@ interface SettingsDocumentData {
 	 * - **Documentation**: https://prismic.io/docs/fields/text
 	 */
 	site_title: prismic.KeyTextField;
-
+	
 	/**
 	 * meta description field in *Settings*
 	 *
@@ -544,7 +544,7 @@ interface SettingsDocumentData {
 	 * - **Documentation**: https://prismic.io/docs/fields/text
 	 */
 	meta_description: prismic.KeyTextField;
-
+	
 	/**
 	 * paragraph field in *Settings*
 	 *
@@ -555,7 +555,7 @@ interface SettingsDocumentData {
 	 * - **Documentation**: https://prismic.io/docs/fields/rich-text
 	 */
 	paragraph: prismic.RichTextField;
-
+	
 	/**
 	 * navigation field in *Settings*
 	 *
@@ -566,7 +566,7 @@ interface SettingsDocumentData {
 	 * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
 	 */
 	navigation: prismic.GroupField<Simplify<SettingsDocumentDataNavigationItem>>;
-
+	
 	/**
 	 * og image field in *Settings*
 	 *
@@ -577,7 +577,7 @@ interface SettingsDocumentData {
 	 * - **Documentation**: https://prismic.io/docs/fields/image
 	 */
 	og_image: prismic.ImageField<never>;
-
+	
 	/**
 	 * cta field in *Settings*
 	 *
@@ -588,7 +588,7 @@ interface SettingsDocumentData {
 	 * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
 	 */
 	cta: prismic.GroupField<Simplify<SettingsDocumentDataCtaItem>>;
-
+	
 	/**
 	 * socials field in *Settings*
 	 *
@@ -599,7 +599,7 @@ interface SettingsDocumentData {
 	 * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
 	 */
 	socials: prismic.GroupField<Simplify<SettingsDocumentDataSocialsItem>>;
-
+	
 	/**
 	 * legal field in *Settings*
 	 *
@@ -610,7 +610,7 @@ interface SettingsDocumentData {
 	 * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
 	 */
 	lega: prismic.GroupField<Simplify<SettingsDocumentDataLegaItem>>;
-
+	
 	/**
 	 * Slice Zone field in *Settings*
 	 *
@@ -649,7 +649,7 @@ export interface AboutSliceDefaultPrimaryLinksItem {
 	 * - **Documentation**: https://prismic.io/docs/fields/link
 	 */
 	about: prismic.LinkField<string, string, unknown, prismic.FieldState, never>;
-
+	
 	/**
 	 * label field in *About → Default → Primary → links*
 	 *
@@ -674,7 +674,7 @@ export interface AboutSliceAlternatePrimaryLinksItem {
 	 * - **Documentation**: https://prismic.io/docs/fields/link
 	 */
 	about: prismic.LinkField<string, string, unknown, prismic.FieldState, never>;
-
+	
 	/**
 	 * label field in *About → alternate → Primary → links*
 	 *
@@ -699,7 +699,7 @@ export interface AboutSliceDefaultPrimary {
 	 * - **Documentation**: https://prismic.io/docs/fields/rich-text
 	 */
 	caption: prismic.RichTextField;
-
+	
 	/**
 	 * links field in *About → Default → Primary*
 	 *
@@ -709,7 +709,7 @@ export interface AboutSliceDefaultPrimary {
 	 * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
 	 */
 	links: prismic.GroupField<Simplify<AboutSliceDefaultPrimaryLinksItem>>;
-
+	
 	/**
 	 * history field in *About → Default → Primary*
 	 *
@@ -719,7 +719,7 @@ export interface AboutSliceDefaultPrimary {
 	 * - **Documentation**: https://prismic.io/docs/fields/rich-text
 	 */
 	history: prismic.RichTextField;
-
+	
 	/**
 	 * about img field in *About → Default → Primary*
 	 *
@@ -753,7 +753,7 @@ export interface AboutSliceAlternatePrimary {
 	 * - **Documentation**: https://prismic.io/docs/fields/rich-text
 	 */
 	caption: prismic.RichTextField;
-
+	
 	/**
 	 * links field in *About → alternate → Primary*
 	 *
@@ -763,7 +763,7 @@ export interface AboutSliceAlternatePrimary {
 	 * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
 	 */
 	links: prismic.GroupField<Simplify<AboutSliceAlternatePrimaryLinksItem>>;
-
+	
 	/**
 	 * about_img field in *About → alternate → Primary*
 	 *
@@ -811,7 +811,7 @@ export interface BlogPostSliceDefaultPrimaryButtonGroupItem {
 	 * - **Documentation**: https://prismic.io/docs/fields/link
 	 */
 	button_link: prismic.LinkField<string, string, unknown, prismic.FieldState, never>;
-
+	
 	/**
 	 * Button label  field in *BlogPost → Default → Primary → Button Group*
 	 *
@@ -836,7 +836,7 @@ export interface BlogPostSliceDefaultPrimary {
 	 * - **Documentation**: https://prismic.io/docs/fields/image
 	 */
 	blog_image: prismic.ImageField<never>;
-
+	
 	/**
 	 * Blog heading  field in *BlogPost → Default → Primary*
 	 *
@@ -846,7 +846,7 @@ export interface BlogPostSliceDefaultPrimary {
 	 * - **Documentation**: https://prismic.io/docs/fields/rich-text
 	 */
 	blog_heading: prismic.RichTextField;
-
+	
 	/**
 	 * Blog content  field in *BlogPost → Default → Primary*
 	 *
@@ -856,7 +856,7 @@ export interface BlogPostSliceDefaultPrimary {
 	 * - **Documentation**: https://prismic.io/docs/fields/text
 	 */
 	blog_content: prismic.KeyTextField;
-
+	
 	/**
 	 * sub heading field in *BlogPost → Default → Primary*
 	 *
@@ -866,7 +866,7 @@ export interface BlogPostSliceDefaultPrimary {
 	 * - **Documentation**: https://prismic.io/docs/fields/rich-text
 	 */
 	sub_heading: prismic.RichTextField;
-
+	
 	/**
 	 * Sub heading content  field in *BlogPost → Default → Primary*
 	 *
@@ -876,7 +876,7 @@ export interface BlogPostSliceDefaultPrimary {
 	 * - **Documentation**: https://prismic.io/docs/fields/text
 	 */
 	sub_heading_content: prismic.KeyTextField;
-
+	
 	/**
 	 * Button Group field in *BlogPost → Default → Primary*
 	 *
@@ -924,7 +924,7 @@ export interface BlogPreviewCardSliceDefaultPrimaryBlogGroupItem {
 	 * - **Documentation**: https://prismic.io/docs/fields/image
 	 */
 	blog_image: prismic.ImageField<never>;
-
+	
 	/**
 	 * Blog heading field in *BlogPreviewCard → Default → Primary → Blog Group*
 	 *
@@ -934,7 +934,7 @@ export interface BlogPreviewCardSliceDefaultPrimaryBlogGroupItem {
 	 * - **Documentation**: https://prismic.io/docs/fields/rich-text
 	 */
 	blog_heading: prismic.RichTextField;
-
+	
 	/**
 	 * Blog Caption field in *BlogPreviewCard → Default → Primary → Blog Group*
 	 *
@@ -944,7 +944,7 @@ export interface BlogPreviewCardSliceDefaultPrimaryBlogGroupItem {
 	 * - **Documentation**: https://prismic.io/docs/fields/text
 	 */
 	blog_caption: prismic.KeyTextField;
-
+	
 	/**
 	 * Blog text field in *BlogPreviewCard → Default → Primary → Blog Group*
 	 *
@@ -954,7 +954,7 @@ export interface BlogPreviewCardSliceDefaultPrimaryBlogGroupItem {
 	 * - **Documentation**: https://prismic.io/docs/fields/text
 	 */
 	blog_text: prismic.KeyTextField;
-
+	
 	/**
 	 * Blog link field in *BlogPreviewCard → Default → Primary → Blog Group*
 	 *
@@ -1017,7 +1017,7 @@ export interface ClientCarouselSliceDefaultPrimaryClientButtonItem {
 	 * - **Documentation**: https://prismic.io/docs/fields/text
 	 */
 	client_label: prismic.KeyTextField;
-
+	
 	/**
 	 * client_link field in *ClientCarousel → Default → Primary → client_button*
 	 *
@@ -1042,7 +1042,7 @@ export interface ClientCarouselSliceDefaultPrimaryClientGroupItem {
 	 * - **Documentation**: https://prismic.io/docs/fields/image
 	 */
 	client_img: prismic.ImageField<never>;
-
+	
 	/**
 	 * client_name  field in *ClientCarousel → Default → Primary → client_group*
 	 *
@@ -1067,7 +1067,7 @@ export interface ClientCarouselSliceDefaultPrimary {
 	 * - **Documentation**: https://prismic.io/docs/fields/text
 	 */
 	clients_heading: prismic.KeyTextField;
-
+	
 	/**
 	 * client_paragraph field in *ClientCarousel → Default → Primary*
 	 *
@@ -1077,7 +1077,7 @@ export interface ClientCarouselSliceDefaultPrimary {
 	 * - **Documentation**: https://prismic.io/docs/fields/text
 	 */
 	client_paragraph: prismic.KeyTextField;
-
+	
 	/**
 	 * client_button field in *ClientCarousel → Default → Primary*
 	 *
@@ -1087,7 +1087,7 @@ export interface ClientCarouselSliceDefaultPrimary {
 	 * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
 	 */
 	client_button: prismic.GroupField<Simplify<ClientCarouselSliceDefaultPrimaryClientButtonItem>>;
-
+	
 	/**
 	 * client_group field in *ClientCarousel → Default → Primary*
 	 *
@@ -1135,7 +1135,7 @@ export interface ContentSliceDefaultPrimaryOverviewItem {
 	 * - **Documentation**: https://prismic.io/docs/fields/text
 	 */
 	stat_result: prismic.KeyTextField;
-
+	
 	/**
 	 * al stat field in *Metrics → Default → Primary → overview*
 	 *
@@ -1175,7 +1175,7 @@ export interface ContentSliceDefaultPrimary {
 	 * - **Documentation**: https://prismic.io/docs/fields/rich-text
 	 */
 	title: prismic.RichTextField;
-
+	
 	/**
 	 * geo field in *Metrics → Default → Primary*
 	 *
@@ -1185,7 +1185,7 @@ export interface ContentSliceDefaultPrimary {
 	 * - **Documentation**: https://prismic.io/docs/fields/text
 	 */
 	geo: prismic.KeyTextField;
-
+	
 	/**
 	 * over paragraph field in *Metrics → Default → Primary*
 	 *
@@ -1195,7 +1195,7 @@ export interface ContentSliceDefaultPrimary {
 	 * - **Documentation**: https://prismic.io/docs/fields/text
 	 */
 	over_paragraph: prismic.KeyTextField;
-
+	
 	/**
 	 * overview field in *Metrics → Default → Primary*
 	 *
@@ -1205,7 +1205,7 @@ export interface ContentSliceDefaultPrimary {
 	 * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
 	 */
 	overview: prismic.GroupField<Simplify<ContentSliceDefaultPrimaryOverviewItem>>;
-
+	
 	/**
 	 * gallery img field in *Metrics → Default → Primary*
 	 *
@@ -1253,7 +1253,7 @@ export interface CtaSliceDefaultPrimary {
 	 * - **Documentation**: https://prismic.io/docs/fields/image
 	 */
 	cta_img: prismic.ImageField<never>;
-
+	
 	/**
 	 * cta heading field in *Cta → Default → Primary*
 	 *
@@ -1301,7 +1301,7 @@ export interface FaqSliceDefaultPrimaryQuestionItem {
 	 * - **Documentation**: https://prismic.io/docs/fields/rich-text
 	 */
 	question: prismic.RichTextField;
-
+	
 	/**
 	 * answer field in *Faq → Default → Primary → faq*
 	 *
@@ -1326,7 +1326,7 @@ export interface FaqSliceDefaultPrimary {
 	 * - **Documentation**: https://prismic.io/docs/fields/rich-text
 	 */
 	heading: prismic.RichTextField;
-
+	
 	/**
 	 * sub heading field in *Faq → Default → Primary*
 	 *
@@ -1336,7 +1336,7 @@ export interface FaqSliceDefaultPrimary {
 	 * - **Documentation**: https://prismic.io/docs/fields/rich-text
 	 */
 	sub_heading: prismic.RichTextField;
-
+	
 	/**
 	 * paragraph field in *Faq → Default → Primary*
 	 *
@@ -1346,7 +1346,7 @@ export interface FaqSliceDefaultPrimary {
 	 * - **Documentation**: https://prismic.io/docs/fields/rich-text
 	 */
 	paragraph: prismic.RichTextField;
-
+	
 	/**
 	 * faq field in *Faq → Default → Primary*
 	 *
@@ -1394,7 +1394,7 @@ export interface HeroSliceDefaultPrimaryButtonGroupItem {
 	 * - **Documentation**: https://prismic.io/docs/fields/text
 	 */
 	button_label: prismic.KeyTextField;
-
+	
 	/**
 	 * button link field in *Hero → Default → Primary → Button Group*
 	 *
@@ -1419,7 +1419,7 @@ export interface HeroSliceDefaultPrimary {
 	 * - **Documentation**: https://prismic.io/docs/fields/rich-text
 	 */
 	heading: prismic.RichTextField;
-
+	
 	/**
 	 * body field in *Hero → Default → Primary*
 	 *
@@ -1429,7 +1429,7 @@ export interface HeroSliceDefaultPrimary {
 	 * - **Documentation**: https://prismic.io/docs/fields/rich-text
 	 */
 	body: prismic.RichTextField;
-
+	
 	/**
 	 * image field in *Hero → Default → Primary*
 	 *
@@ -1439,7 +1439,7 @@ export interface HeroSliceDefaultPrimary {
 	 * - **Documentation**: https://prismic.io/docs/fields/image
 	 */
 	image: prismic.ImageField<never>;
-
+	
 	/**
 	 * Button Group field in *Hero → Default → Primary*
 	 *
@@ -1473,7 +1473,7 @@ export interface HeroSliceAlternatePrimary {
 	 * - **Documentation**: https://prismic.io/docs/fields/rich-text
 	 */
 	heading: prismic.RichTextField;
-
+	
 	/**
 	 * body field in *Hero → alternate → Primary*
 	 *
@@ -1483,7 +1483,7 @@ export interface HeroSliceAlternatePrimary {
 	 * - **Documentation**: https://prismic.io/docs/fields/rich-text
 	 */
 	body: prismic.RichTextField;
-
+	
 	/**
 	 * image field in *Hero → alternate → Primary*
 	 *
@@ -1531,7 +1531,7 @@ export interface MilestonesSliceDefaultPrimary {
 	 * - **Documentation**: https://prismic.io/docs/fields/text
 	 */
 	port_heading: prismic.KeyTextField;
-
+	
 	/**
 	 * port sub heading field in *Milestones → Default → Primary*
 	 *
@@ -1541,7 +1541,7 @@ export interface MilestonesSliceDefaultPrimary {
 	 * - **Documentation**: https://prismic.io/docs/fields/text
 	 */
 	port_sub_heading: prismic.KeyTextField;
-
+	
 	/**
 	 * port paragraph field in *Milestones → Default → Primary*
 	 *
@@ -1551,7 +1551,7 @@ export interface MilestonesSliceDefaultPrimary {
 	 * - **Documentation**: https://prismic.io/docs/fields/text
 	 */
 	port_paragraph: prismic.KeyTextField;
-
+	
 	/**
 	 * heading field in *Milestones → Default → Primary*
 	 *
@@ -1561,7 +1561,7 @@ export interface MilestonesSliceDefaultPrimary {
 	 * - **Documentation**: https://prismic.io/docs/fields/rich-text
 	 */
 	heading: prismic.RichTextField;
-
+	
 	/**
 	 * sub heading field in *Milestones → Default → Primary*
 	 *
@@ -1571,7 +1571,7 @@ export interface MilestonesSliceDefaultPrimary {
 	 * - **Documentation**: https://prismic.io/docs/fields/rich-text
 	 */
 	sub_heading: prismic.RichTextField;
-
+	
 	/**
 	 * paragraph field in *Milestones → Default → Primary*
 	 *
@@ -1619,7 +1619,7 @@ export interface PartnerCardsSliceDefaultPrimaryPartnerCardItem {
 	 * - **Documentation**: https://prismic.io/docs/fields/image
 	 */
 	partner_image: prismic.ImageField<never>;
-
+	
 	/**
 	 * Partner Heading field in *PartnerCards → Default → Primary → Partner Card*
 	 *
@@ -1629,7 +1629,7 @@ export interface PartnerCardsSliceDefaultPrimaryPartnerCardItem {
 	 * - **Documentation**: https://prismic.io/docs/fields/text
 	 */
 	partner_heading: prismic.KeyTextField;
-
+	
 	/**
 	 * Partner Content  field in *PartnerCards → Default → Primary → Partner Card*
 	 *
@@ -1639,7 +1639,7 @@ export interface PartnerCardsSliceDefaultPrimaryPartnerCardItem {
 	 * - **Documentation**: https://prismic.io/docs/fields/text
 	 */
 	partner_content: prismic.KeyTextField;
-
+	
 	/**
 	 * Partner Link field in *PartnerCards → Default → Primary → Partner Card*
 	 *
@@ -1649,7 +1649,7 @@ export interface PartnerCardsSliceDefaultPrimaryPartnerCardItem {
 	 * - **Documentation**: https://prismic.io/docs/fields/link
 	 */
 	partner_link: prismic.LinkField<string, string, unknown, prismic.FieldState, never>;
-
+	
 	/**
 	 * partner_tag field in *PartnerCards → Default → Primary → Partner Card*
 	 *
@@ -1674,7 +1674,7 @@ export interface PartnerCardsSliceDefaultPrimary {
 	 * - **Documentation**: https://prismic.io/docs/fields/image
 	 */
 	partner_hero: prismic.ImageField<never>;
-
+	
 	/**
 	 * Partner_title field in *PartnerCards → Default → Primary*
 	 *
@@ -1684,7 +1684,7 @@ export interface PartnerCardsSliceDefaultPrimary {
 	 * - **Documentation**: https://prismic.io/docs/fields/text
 	 */
 	partner_title: prismic.KeyTextField;
-
+	
 	/**
 	 * Partner Content  field in *PartnerCards → Default → Primary*
 	 *
@@ -1694,7 +1694,7 @@ export interface PartnerCardsSliceDefaultPrimary {
 	 * - **Documentation**: https://prismic.io/docs/fields/text
 	 */
 	partner_content: prismic.KeyTextField;
-
+	
 	/**
 	 * Partner Card field in *PartnerCards → Default → Primary*
 	 *
@@ -1742,7 +1742,7 @@ export interface PartnersCarouselSliceDefaultPrimaryPartnersCarouselItem {
 	 * - **Documentation**: https://prismic.io/docs/fields/image
 	 */
 	partner_img: prismic.ImageField<never>;
-
+	
 	/**
 	 * partner_link field in *PartnersCarousel → Default → Primary → partners carousel*
 	 *
@@ -1752,12 +1752,12 @@ export interface PartnersCarouselSliceDefaultPrimaryPartnersCarouselItem {
 	 * - **Documentation**: https://prismic.io/docs/fields/link
 	 */
 	partner_link: prismic.Repeatable<prismic.LinkField<string, string, unknown, prismic.FieldState, never>>;
-
+	
 	/**
 	 * partner_heading  field in *PartnersCarousel → Default → Primary → partners carousel*
 	 *
 	 * - **Field Type**: Rich Text
-	 * - **Placeholder**: heading
+	 * - **Placeholder**: heading 
 	 * - **API ID Path**: partners_carousel.default.primary.partners_carousel[].partner_heading
 	 * - **Documentation**: https://prismic.io/docs/fields/rich-text
 	 */
@@ -1815,7 +1815,7 @@ export interface PartnersContentSliceDefaultPrimaryButtonItem {
 	 * - **Documentation**: https://prismic.io/docs/fields/text
 	 */
 	button_label: prismic.KeyTextField;
-
+	
 	/**
 	 * Button Link field in *PartnersContent → Default → Primary → Button*
 	 *
@@ -1840,7 +1840,7 @@ export interface PartnersContentSliceDefaultPrimaryPartnerVariantContentItem {
 	 * - **Documentation**: https://prismic.io/docs/fields/image
 	 */
 	variant_image: prismic.ImageField<never>;
-
+	
 	/**
 	 * Variant Heading  field in *PartnersContent → Default → Primary → Partner Variant Content*
 	 *
@@ -1850,7 +1850,7 @@ export interface PartnersContentSliceDefaultPrimaryPartnerVariantContentItem {
 	 * - **Documentation**: https://prismic.io/docs/fields/text
 	 */
 	variant_heading: prismic.KeyTextField;
-
+	
 	/**
 	 * Variant Content  field in *PartnersContent → Default → Primary → Partner Variant Content*
 	 *
@@ -1875,7 +1875,7 @@ export interface PartnersContentSliceDefaultPrimaryPartnerContentItem {
 	 * - **Documentation**: https://prismic.io/docs/fields/image
 	 */
 	partner_image: prismic.ImageField<never>;
-
+	
 	/**
 	 * Partner Heading field in *PartnersContent → Default → Primary → Partner_Content *
 	 *
@@ -1885,7 +1885,7 @@ export interface PartnersContentSliceDefaultPrimaryPartnerContentItem {
 	 * - **Documentation**: https://prismic.io/docs/fields/text
 	 */
 	partner_heading: prismic.KeyTextField;
-
+	
 	/**
 	 * Partner Content  field in *PartnersContent → Default → Primary → Partner_Content *
 	 *
@@ -1895,7 +1895,7 @@ export interface PartnersContentSliceDefaultPrimaryPartnerContentItem {
 	 * - **Documentation**: https://prismic.io/docs/fields/text
 	 */
 	partner_content: prismic.KeyTextField;
-
+	
 	/**
 	 * Partner Link field in *PartnersContent → Default → Primary → Partner_Content *
 	 *
@@ -1905,7 +1905,7 @@ export interface PartnersContentSliceDefaultPrimaryPartnerContentItem {
 	 * - **Documentation**: https://prismic.io/docs/fields/link
 	 */
 	partner_link: prismic.LinkField<string, string, unknown, prismic.FieldState, never>;
-
+	
 	/**
 	 * Partner Label field in *PartnersContent → Default → Primary → Partner_Content *
 	 *
@@ -1930,7 +1930,7 @@ export interface PartnersContentSliceDefaultPrimary {
 	 * - **Documentation**: https://prismic.io/docs/fields/image
 	 */
 	partner_img: prismic.ImageField<never>;
-
+	
 	/**
 	 * title field in *PartnersContent → Default → Primary*
 	 *
@@ -1940,7 +1940,7 @@ export interface PartnersContentSliceDefaultPrimary {
 	 * - **Documentation**: https://prismic.io/docs/fields/text
 	 */
 	title: prismic.KeyTextField;
-
+	
 	/**
 	 * content  field in *PartnersContent → Default → Primary*
 	 *
@@ -1950,7 +1950,7 @@ export interface PartnersContentSliceDefaultPrimary {
 	 * - **Documentation**: https://prismic.io/docs/fields/text
 	 */
 	content: prismic.KeyTextField;
-
+	
 	/**
 	 * Button field in *PartnersContent → Default → Primary*
 	 *
@@ -1960,7 +1960,7 @@ export interface PartnersContentSliceDefaultPrimary {
 	 * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
 	 */
 	button: prismic.GroupField<Simplify<PartnersContentSliceDefaultPrimaryButtonItem>>;
-
+	
 	/**
 	 * Reason_Caption field in *PartnersContent → Default → Primary*
 	 *
@@ -1970,7 +1970,7 @@ export interface PartnersContentSliceDefaultPrimary {
 	 * - **Documentation**: https://prismic.io/docs/fields/text
 	 */
 	reason_caption: prismic.KeyTextField;
-
+	
 	/**
 	 * Partner Variant Content field in *PartnersContent → Default → Primary*
 	 *
@@ -1980,7 +1980,7 @@ export interface PartnersContentSliceDefaultPrimary {
 	 * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
 	 */
 	partner_variant_content: prismic.GroupField<Simplify<PartnersContentSliceDefaultPrimaryPartnerVariantContentItem>>;
-
+	
 	/**
 	 * Partner_Content  field in *PartnersContent → Default → Primary*
 	 *
@@ -2016,6 +2016,74 @@ type PartnersContentSliceVariation = PartnersContentSliceDefault
 export type PartnersContentSlice = prismic.SharedSlice<"partners_content", PartnersContentSliceVariation>;
 
 /**
+ * Primary content in *PromoBanner → Default → Primary*
+ */
+export interface PromoBannerSliceDefaultPrimary {
+	/**
+	 * Heading field in *PromoBanner → Default → Primary*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: promo_banner.default.primary.title
+	 * - **Documentation**: https://prismic.io/docs/fields/rich-text
+	 */
+	title: prismic.RichTextField;
+	
+	/**
+	 * Description field in *PromoBanner → Default → Primary*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: promo_banner.default.primary.description
+	 * - **Documentation**: https://prismic.io/docs/fields/rich-text
+	 */
+	description: prismic.RichTextField;
+	
+	/**
+	 * Button Text field in *PromoBanner → Default → Primary*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: promo_banner.default.primary.button_text
+	 * - **Documentation**: https://prismic.io/docs/fields/text
+	 */
+	button_text: prismic.KeyTextField;
+	
+	/**
+	 * Button Link field in *PromoBanner → Default → Primary*
+	 *
+	 * - **Field Type**: Link
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: promo_banner.default.primary.button_link
+	 * - **Documentation**: https://prismic.io/docs/fields/link
+	 */
+	button_link: prismic.LinkField<string, string, unknown, prismic.FieldState, never>;
+}
+
+/**
+ * Default variation for PromoBanner Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type PromoBannerSliceDefault = prismic.SharedSliceVariation<"default", Simplify<PromoBannerSliceDefaultPrimary>, never>;
+
+/**
+ * Slice variation for *PromoBanner*
+ */
+type PromoBannerSliceVariation = PromoBannerSliceDefault
+
+/**
+ * PromoBanner Shared Slice
+ *
+ * - **API ID**: `promo_banner`
+ * - **Description**: *None*
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type PromoBannerSlice = prismic.SharedSlice<"promo_banner", PromoBannerSliceVariation>;
+
+/**
  * Item in *Properties → default → Primary → image navigator*
  */
 export interface PropertiesSliceAlternatePrimaryImageNavigatorItem {
@@ -2028,7 +2096,7 @@ export interface PropertiesSliceAlternatePrimaryImageNavigatorItem {
 	 * - **Documentation**: https://prismic.io/docs/fields/link
 	 */
 	navigator_link: prismic.LinkField<string, string, unknown, prismic.FieldState, never>;
-
+	
 	/**
 	 * display img field in *Properties → default → Primary → image navigator*
 	 *
@@ -2038,7 +2106,7 @@ export interface PropertiesSliceAlternatePrimaryImageNavigatorItem {
 	 * - **Documentation**: https://prismic.io/docs/fields/image
 	 */
 	display_img: prismic.ImageField<never>;
-
+	
 	/**
 	 * heading field in *Properties → default → Primary → image navigator*
 	 *
@@ -2048,7 +2116,7 @@ export interface PropertiesSliceAlternatePrimaryImageNavigatorItem {
 	 * - **Documentation**: https://prismic.io/docs/fields/rich-text
 	 */
 	heading: prismic.RichTextField;
-
+	
 	/**
 	 * paragraph field in *Properties → default → Primary → image navigator*
 	 *
@@ -2073,7 +2141,7 @@ export interface PropertiesSliceAlternatePrimary {
 	 * - **Documentation**: https://prismic.io/docs/fields/rich-text
 	 */
 	heading: prismic.RichTextField;
-
+	
 	/**
 	 * paragraph field in *Properties → default → Primary*
 	 *
@@ -2083,7 +2151,7 @@ export interface PropertiesSliceAlternatePrimary {
 	 * - **Documentation**: https://prismic.io/docs/fields/rich-text
 	 */
 	paragraph: prismic.RichTextField;
-
+	
 	/**
 	 * image navigator field in *Properties → default → Primary*
 	 *
@@ -2131,7 +2199,7 @@ export interface RecentSliceDefaultPrimaryNavigatorItem {
 	 * - **Documentation**: https://prismic.io/docs/fields/link
 	 */
 	link: prismic.LinkField<string, string, unknown, prismic.FieldState, never>;
-
+	
 	/**
 	 * label field in *Projects → Default → Primary → navigator*
 	 *
@@ -2156,7 +2224,7 @@ export interface RecentSliceDefaultPrimaryImageNavigatorItem {
 	 * - **Documentation**: https://prismic.io/docs/fields/image
 	 */
 	display_img: prismic.ImageField<never>;
-
+	
 	/**
 	 * display link field in *Projects → Default → Primary → image navigator*
 	 *
@@ -2166,7 +2234,7 @@ export interface RecentSliceDefaultPrimaryImageNavigatorItem {
 	 * - **Documentation**: https://prismic.io/docs/fields/link
 	 */
 	display_link: prismic.LinkField<string, string, unknown, prismic.FieldState, never>;
-
+	
 	/**
 	 * display text field in *Projects → Default → Primary → image navigator*
 	 *
@@ -2176,7 +2244,7 @@ export interface RecentSliceDefaultPrimaryImageNavigatorItem {
 	 * - **Documentation**: https://prismic.io/docs/fields/text
 	 */
 	display_text: prismic.KeyTextField;
-
+	
 	/**
 	 * display geo field in *Projects → Default → Primary → image navigator*
 	 *
@@ -2201,7 +2269,7 @@ export interface RecentSliceDefaultPrimary {
 	 * - **Documentation**: https://prismic.io/docs/fields/rich-text
 	 */
 	heading: prismic.RichTextField;
-
+	
 	/**
 	 * paragraph field in *Projects → Default → Primary*
 	 *
@@ -2211,7 +2279,7 @@ export interface RecentSliceDefaultPrimary {
 	 * - **Documentation**: https://prismic.io/docs/fields/rich-text
 	 */
 	paragraph: prismic.RichTextField;
-
+	
 	/**
 	 * navigator field in *Projects → Default → Primary*
 	 *
@@ -2221,7 +2289,7 @@ export interface RecentSliceDefaultPrimary {
 	 * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
 	 */
 	navigator: prismic.GroupField<Simplify<RecentSliceDefaultPrimaryNavigatorItem>>;
-
+	
 	/**
 	 * image navigator field in *Projects → Default → Primary*
 	 *
@@ -2269,7 +2337,7 @@ export interface TestimonialsSliceDefaultPrimaryTestimonialsItem {
 	 * - **Documentation**: https://prismic.io/docs/fields/image
 	 */
 	testimonial_image: prismic.ImageField<never>;
-
+	
 	/**
 	 * Heading  field in *Testimonials → Default → Primary → Testimonials*
 	 *
@@ -2279,7 +2347,7 @@ export interface TestimonialsSliceDefaultPrimaryTestimonialsItem {
 	 * - **Documentation**: https://prismic.io/docs/fields/rich-text
 	 */
 	heading: prismic.RichTextField;
-
+	
 	/**
 	 * paragraph field in *Testimonials → Default → Primary → Testimonials*
 	 *
@@ -2333,15 +2401,15 @@ declare module "@prismicio/client" {
 	interface CreateClient {
 		(repositoryNameOrEndpoint: string, options?: prismic.ClientConfig): prismic.Client<AllDocumentTypes>;
 	}
-
+	
 	interface CreateWriteClient {
 		(repositoryNameOrEndpoint: string, options: prismic.WriteClientConfig): prismic.WriteClient<AllDocumentTypes>;
 	}
-
+	
 	interface CreateMigration {
 		(): prismic.Migration<AllDocumentTypes>;
 	}
-
+	
 	namespace Content {
 		export type {
 			BlogDocument,
@@ -2437,6 +2505,10 @@ declare module "@prismicio/client" {
 			PartnersContentSliceDefaultPrimary,
 			PartnersContentSliceVariation,
 			PartnersContentSliceDefault,
+			PromoBannerSlice,
+			PromoBannerSliceDefaultPrimary,
+			PromoBannerSliceVariation,
+			PromoBannerSliceDefault,
 			PropertiesSlice,
 			PropertiesSliceAlternatePrimaryImageNavigatorItem,
 			PropertiesSliceAlternatePrimary,
