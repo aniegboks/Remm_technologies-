@@ -21,116 +21,14 @@
         "intro": {
           "config": {
             "label": "Introduction",
-            "multi": "paragraph,preformatted,strong,em"
+            "multi": "paragraph,strong,em"
           },
           "type": "StructuredText"
-        },
-        "what_we_do_label": {
-          "config": {
-            "label": "What We Do Label"
-          },
-          "type": "Text"
-        },
-        "what_we_do_heading": {
-          "config": {
-            "label": "What We Do Heading"
-          },
-          "type": "Text"
-        },
-        "accessibility_label": {
-          "config": {
-            "label": "Accessibility Label"
-          },
-          "type": "Text"
-        },
-        "accessibility_heading": {
-          "config": {
-            "label": "Accessibility Heading"
-          },
-          "type": "Text"
-        },
-        "accessibility_description": {
-          "config": {
-            "label": "Accessibility Description",
-            "multi": "paragraph,preformatted,strong,em"
-          },
-          "type": "StructuredText"
-        },
-        "solutions_label": {
-          "config": {
-            "label": "Solutions Label"
-          },
-          "type": "Text"
-        },
-        "solutions_description": {
-          "config": {
-            "label": "Solutions Description",
-            "multi": "paragraph,preformatted,strong,em"
-          },
-          "type": "StructuredText"
-        },
-        "team_label": {
-          "config": {
-            "label": "Team Label"
-          },
-          "type": "Text"
-        },
-        "team_description": {
-          "config": {
-            "label": "Team Description",
-            "multi": "paragraph,preformatted,strong,em"
-          },
-          "type": "StructuredText"
-        },
-        "caption": {
-          "config": {
-            "allowTargetBlank": true,
-            "label": "caption",
-            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em",
-            "placeholder": ""
-          },
-          "type": "StructuredText"
-        },
-        "history": {
-          "config": {
-            "allowTargetBlank": true,
-            "label": "history",
-            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em",
-            "placeholder": ""
-          },
-          "type": "StructuredText"
-        },
-        "links": {
-          "config": {
-            "fields": {
-              "about": {
-                "config": {
-                  "allowTargetBlank": true,
-                  "allowText": true,
-                  "label": "link",
-                  "placeholder": "",
-                  "repeat": false,
-                  "select": null
-                },
-                "type": "Link"
-              },
-              "label": {
-                "config": {
-                  "label": "label",
-                  "placeholder": ""
-                },
-                "type": "Text"
-              }
-            },
-            "label": "links",
-            "repeat": true
-          },
-          "type": "Group"
         },
         "about_img": {
           "config": {
             "constraint": {},
-            "label": "about img",
+            "label": "About Image",
             "thumbnails": []
           },
           "type": "Image"
@@ -155,116 +53,14 @@
         "intro": {
           "config": {
             "label": "Introduction",
-            "multi": "paragraph,preformatted,strong,em"
+            "multi": "paragraph,strong,em"
           },
           "type": "StructuredText"
-        },
-        "what_we_do_label": {
-          "config": {
-            "label": "What We Do Label"
-          },
-          "type": "Text"
-        },
-        "what_we_do_heading": {
-          "config": {
-            "label": "What We Do Heading"
-          },
-          "type": "Text"
-        },
-        "accessibility_label": {
-          "config": {
-            "label": "Accessibility Label"
-          },
-          "type": "Text"
-        },
-        "accessibility_heading": {
-          "config": {
-            "label": "Accessibility Heading"
-          },
-          "type": "Text"
-        },
-        "accessibility_description": {
-          "config": {
-            "label": "Accessibility Description",
-            "multi": "paragraph,preformatted,strong,em"
-          },
-          "type": "StructuredText"
-        },
-        "solutions_label": {
-          "config": {
-            "label": "Solutions Label"
-          },
-          "type": "Text"
-        },
-        "solutions_description": {
-          "config": {
-            "label": "Solutions Description",
-            "multi": "paragraph,preformatted,strong,em"
-          },
-          "type": "StructuredText"
-        },
-        "team_label": {
-          "config": {
-            "label": "Team Label"
-          },
-          "type": "Text"
-        },
-        "team_description": {
-          "config": {
-            "label": "Team Description",
-            "multi": "paragraph,preformatted,strong,em"
-          },
-          "type": "StructuredText"
-        },
-        "caption": {
-          "config": {
-            "allowTargetBlank": true,
-            "label": "caption",
-            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em",
-            "placeholder": ""
-          },
-          "type": "StructuredText"
-        },
-        "history": {
-          "config": {
-            "allowTargetBlank": true,
-            "label": "history",
-            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em",
-            "placeholder": ""
-          },
-          "type": "StructuredText"
-        },
-        "links": {
-          "config": {
-            "fields": {
-              "about": {
-                "config": {
-                  "allowTargetBlank": true,
-                  "allowText": true,
-                  "label": "link",
-                  "placeholder": "",
-                  "repeat": false,
-                  "select": null
-                },
-                "type": "Link"
-              },
-              "label": {
-                "config": {
-                  "label": "label",
-                  "placeholder": ""
-                },
-                "type": "Text"
-              }
-            },
-            "label": "links",
-            "repeat": true
-          },
-          "type": "Group"
         },
         "about_img": {
           "config": {
             "constraint": {},
-            "label": "about_img",
+            "label": "About Image",
             "thumbnails": []
           },
           "type": "Image"
