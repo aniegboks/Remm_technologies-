@@ -32,6 +32,21 @@
             "thumbnails": []
           },
           "type": "Image"
+        },
+        "second_paragraph": {
+          "config": {
+            "label": "Second Paragraph",
+            "multi": "paragraph,strong,em"
+          },
+          "type": "StructuredText"
+        },
+        "second_about_img": {
+          "config": {
+            "constraint": {},
+            "label": "Second About Image",
+            "thumbnails": []
+          },
+          "type": "Image"
         }
       },
       "version": "initial"
@@ -71,6 +86,14 @@
             "multi": "paragraph,strong,em"
           },
           "type": "StructuredText"
+        },
+        "second_about_img": {
+          "config": {
+            "constraint": {},
+            "label": "Second About Image",
+            "thumbnails": []
+          },
+          "type": "Image"
         }
       },
       "version": "initial"
