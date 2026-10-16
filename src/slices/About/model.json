@@ -64,6 +64,13 @@
             "thumbnails": []
           },
           "type": "Image"
+        },
+        "second_paragraph": {
+          "config": {
+            "label": "Second Paragraph",
+            "multi": "paragraph,strong,em"
+          },
+          "type": "StructuredText"
         }
       },
       "version": "initial"
