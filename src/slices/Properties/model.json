@@ -37,7 +37,7 @@
                 "config": {
                   "allowTargetBlank": true,
                   "allowText": true,
-                  "label": "navigator link",
+                  "label": "Navigator Link",
                   "placeholder": "",
                   "repeat": false,
                   "select": null
@@ -47,7 +47,7 @@
               "display_img": {
                 "config": {
                   "constraint": {},
-                  "label": "display img",
+                  "label": "Display Image",
                   "thumbnails": []
                 },
                 "type": "Image"
@@ -55,7 +55,7 @@
               "heading": {
                 "config": {
                   "allowTargetBlank": true,
-                  "label": "heading",
+                  "label": "Card Heading",
                   "multi": "heading1,heading2,heading3,heading4,heading5,heading6,strong,em",
                   "placeholder": ""
                 },
@@ -64,14 +64,50 @@
               "paragraph": {
                 "config": {
                   "allowTargetBlank": true,
-                  "label": "paragraph",
+                  "label": "Card Paragraph",
                   "multi": "paragraph,strong,em",
                   "placeholder": ""
                 },
                 "type": "StructuredText"
+              },
+              "link_label": {
+                "config": {
+                  "label": "Link Label",
+                  "placeholder": "Learn More"
+                },
+                "type": "Text"
+              },
+              "accent_color": {
+                "config": {
+                  "label": "Icon Accent Color",
+                  "placeholder": "",
+                  "options": [
+                    {
+                      "name": "Pink",
+                      "value": "pink"
+                    },
+                    {
+                      "name": "Yellow",
+                      "value": "yellow"
+                    },
+                    {
+                      "name": "Orange",
+                      "value": "orange"
+                    },
+                    {
+                      "name": "Teal",
+                      "value": "teal"
+                    },
+                    {
+                      "name": "Purple",
+                      "value": "purple"
+                    }
+                  ]
+                },
+                "type": "Select"
               }
             },
-            "label": "image navigator",
+            "label": "Feature Cards",
             "repeat": true
           },
           "type": "Group"
