@@ -68,6 +68,30 @@
                   "thumbnails": []
                 },
                 "type": "Image"
+              },
+              "title": {
+                "config": {
+                  "label": "Title"
+                },
+                "type": "Text"
+              },
+              "description": {
+                "config": {
+                  "label": "Description"
+                },
+                "type": "Text"
+              },
+              "cta_label": {
+                "config": {
+                  "label": "Cta Label"
+                },
+                "type": "Text"
+              },
+              "cta_link": {
+                "config": {
+                  "label": "Cta Link"
+                },
+                "type": "Link"
               }
             },
             "label": "gallery img",
