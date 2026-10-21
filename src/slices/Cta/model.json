@@ -1,36 +1,59 @@
 {
-  "description": "Cta",
   "id": "cta",
-  "name": "Cta",
   "type": "SharedSlice",
+  "name": "Cta",
+  "description": "Reusable call-to-action section",
   "variations": [
     {
-      "description": "Default",
-      "docURL": "...",
       "id": "default",
-      "imageUrl": "https://images.prismic.io/prismicprojecta/shared-slices/cta/default/101d34bed04c8168b2ec9c326c71e8b3d1883baf.png?auto=compress%2Cformat",
-      "items": {},
       "name": "Default",
+      "description": "Call-to-action section with background image and button",
+      "docURL": "https://prismic.io/docs/slices",
+      "version": "initial",
+      "imageUrl": "",
       "primary": {
         "cta_img": {
+          "type": "Image",
           "config": {
+            "label": "Background Image",
             "constraint": {},
-            "label": "cta img",
             "thumbnails": []
-          },
-          "type": "Image"
+          }
         },
         "cta_heading": {
+          "type": "StructuredText",
           "config": {
+            "label": "Heading",
+            "placeholder": "Ready to get started?",
+            "allowTargetBlank": false,
+            "multi": "heading1,heading2,heading3,heading4,heading5,heading6,strong,em"
+          }
+        },
+        "cta_description": {
+          "type": "Text",
+          "config": {
+            "label": "Description",
+            "placeholder": "Add a short supporting message"
+          }
+        },
+        "button_label": {
+          "type": "Text",
+          "config": {
+            "label": "Button Label",
+            "placeholder": "Get started"
+          }
+        },
+        "button_link": {
+          "type": "Link",
+          "config": {
+            "label": "Button Link",
+            "placeholder": "Select a page or enter a URL",
             "allowTargetBlank": true,
-            "label": "cta heading",
-            "multi": "heading1,heading2,heading3,heading4,heading5,heading6,strong,em",
-            "placeholder": ""
-          },
-          "type": "StructuredText"
+            "select": null
+          }
         }
       },
-      "version": "initial"
+      "items": {}
     }
   ]
 }
