@@ -8,6 +8,8 @@
       "id": "default",
       "name": "Default",
       "description": "A carousel with text and image testimonial cards",
+      "docURL": "https://prismic.io/docs/slices",
+      "imageUrl": "",
       "version": "initial",
       "primary": {
         "section_heading": {
@@ -40,8 +42,7 @@
                   "options": [
                     "text",
                     "image"
-                  ],
-                  "default_value": "text"
+                  ]
                 }
               },
               "name": {
@@ -93,8 +94,7 @@
                     "purple",
                     "blue",
                     "white"
-                  ],
-                  "default_value": "slate"
+                  ]
                 }
               }
             }
