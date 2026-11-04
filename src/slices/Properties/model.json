@@ -76,21 +76,6 @@
                   "placeholder": "Learn More"
                 },
                 "type": "Text"
-              },
-              "accent_color": {
-                "config": {
-                  "default_value": "pink",
-                  "label": "Icon Accent Color",
-                  "options": [
-                    "pink",
-                    "yellow",
-                    "orange",
-                    "teal",
-                    "purple"
-                  ],
-                  "placeholder": "Choose a color"
-                },
-                "type": "Select"
               }
             },
             "label": "Feature Cards",
