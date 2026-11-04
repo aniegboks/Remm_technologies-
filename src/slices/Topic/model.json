@@ -39,7 +39,7 @@
         },
         "paragraph": {
           "config": {
-            "label": "Paragraph",
+            "label": "paragraph",
             "placeholder": ""
           },
           "type": "Text"
