@@ -6,9 +6,6 @@
       "slices": {
         "config": {
           "choices": {
-            "testimonials": {
-              "type": "SharedSlice"
-            },
             "client_carousel": {
               "type": "SharedSlice"
             },
@@ -16,6 +13,15 @@
               "type": "SharedSlice"
             },
             "hero": {
+              "type": "SharedSlice"
+            },
+            "faq": {
+              "type": "SharedSlice"
+            },
+            "recent": {
+              "type": "SharedSlice"
+            },
+            "partners_carousel": {
               "type": "SharedSlice"
             }
           }
