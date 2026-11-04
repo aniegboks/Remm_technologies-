@@ -79,8 +79,8 @@
               },
               "accent_color": {
                 "config": {
+                  "default_value": "pink",
                   "label": "Icon Accent Color",
-                  "placeholder": "Choose a color",
                   "options": [
                     "pink",
                     "yellow",
@@ -88,7 +88,7 @@
                     "teal",
                     "purple"
                   ],
-                  "default_value": "pink"
+                  "placeholder": "Choose a color"
                 },
                 "type": "Select"
               }

@@ -1,59 +1,59 @@
 {
-  "id": "cta",
-  "type": "SharedSlice",
-  "name": "Cta",
   "description": "Reusable call-to-action section",
+  "id": "cta",
+  "name": "Cta",
+  "type": "SharedSlice",
   "variations": [
     {
-      "id": "default",
-      "name": "Default",
       "description": "Call-to-action section with background image and button",
       "docURL": "https://prismic.io/docs/slices",
-      "version": "initial",
+      "id": "default",
       "imageUrl": "",
+      "items": {},
+      "name": "Default",
       "primary": {
         "cta_img": {
-          "type": "Image",
           "config": {
-            "label": "Background Image",
             "constraint": {},
+            "label": "Background Image",
             "thumbnails": []
-          }
+          },
+          "type": "Image"
         },
         "cta_heading": {
-          "type": "StructuredText",
           "config": {
-            "label": "Heading",
-            "placeholder": "Ready to get started?",
             "allowTargetBlank": false,
-            "multi": "heading1,heading2,heading3,heading4,heading5,heading6,strong,em"
-          }
+            "label": "Heading",
+            "multi": "heading1,heading2,heading3,heading4,heading5,heading6,strong,em",
+            "placeholder": "Ready to get started?"
+          },
+          "type": "StructuredText"
         },
         "cta_description": {
-          "type": "Text",
           "config": {
             "label": "Description",
             "placeholder": "Add a short supporting message"
-          }
+          },
+          "type": "Text"
         },
         "button_label": {
-          "type": "Text",
           "config": {
             "label": "Button Label",
             "placeholder": "Get started"
-          }
+          },
+          "type": "Text"
         },
         "button_link": {
-          "type": "Link",
           "config": {
+            "allowTargetBlank": true,
             "label": "Button Link",
             "placeholder": "Select a page or enter a URL",
-            "allowTargetBlank": true,
             "select": null
-          }
+          },
+          "type": "Link"
         }
       },
-      "items": {}
+      "version": "initial"
     }
   ]
 }

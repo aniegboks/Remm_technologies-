@@ -1,99 +1,100 @@
 {
-  "id": "recent",
-  "type": "SharedSlice",
-  "name": "Recent",
   "description": "Recent projects or properties section",
+  "id": "recent",
+  "name": "Recent",
+  "type": "SharedSlice",
   "variations": [
     {
-      "id": "default",
-      "name": "Default",
-      "docURL": "",
-      "version": "initial",
       "description": "Recent content with configurable heading, navigation, and cards",
-      "primary": {
-        "heading": {
-          "type": "StructuredText",
-          "config": {
-            "label": "Section Heading",
-            "placeholder": "Enter the section heading",
-            "allowTargetBlank": true,
-            "single": "heading1"
-          }
-        },
-        "paragraph": {
-          "type": "StructuredText",
-          "config": {
-            "label": "Section Description",
-            "placeholder": "Describe this section",
-            "multi": "paragraph"
-          }
-        },
-        "navigator": {
-          "type": "Group",
-          "config": {
-            "label": "Navigation Buttons",
-            "repeat": true,
-            "fields": {
-              "label": {
-                "type": "Text",
-                "config": {
-                  "label": "Button Label",
-                  "placeholder": "View all projects"
-                }
-              },
-              "link": {
-                "type": "Link",
-                "config": {
-                  "label": "Button Destination",
-                  "placeholder": "Choose a page or URL",
-                  "allowTargetBlank": true,
-                  "select": null
-                }
-              }
-            }
-          }
-        }
-      },
+      "docURL": "",
+      "id": "default",
+      "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format",
       "items": {
         "display_img": {
-          "type": "Image",
           "config": {
-            "label": "Card Image",
             "constraint": {},
+            "label": "Card Image",
             "thumbnails": []
-          }
+          },
+          "type": "Image"
         },
         "display_text": {
-          "type": "Text",
           "config": {
             "label": "Card Title",
             "placeholder": "Enter a card title"
-          }
+          },
+          "type": "Text"
         },
         "display_geo": {
-          "type": "Text",
           "config": {
             "label": "Location",
             "placeholder": "Enter a location"
-          }
+          },
+          "type": "Text"
         },
         "display_link": {
-          "type": "Link",
           "config": {
+            "allowTargetBlank": true,
             "label": "Card Destination",
             "placeholder": "Choose a page or URL",
-            "allowTargetBlank": true,
             "select": null
-          }
+          },
+          "type": "Link"
         },
         "display_action_label": {
-          "type": "Text",
           "config": {
             "label": "Card Action Label",
             "placeholder": "Learn more"
-          }
+          },
+          "type": "Text"
         }
-      }
+      },
+      "name": "Default",
+      "primary": {
+        "heading": {
+          "config": {
+            "allowTargetBlank": true,
+            "label": "Section Heading",
+            "placeholder": "Enter the section heading",
+            "single": "heading1"
+          },
+          "type": "StructuredText"
+        },
+        "paragraph": {
+          "config": {
+            "label": "Section Description",
+            "multi": "paragraph",
+            "placeholder": "Describe this section"
+          },
+          "type": "StructuredText"
+        },
+        "navigator": {
+          "config": {
+            "fields": {
+              "label": {
+                "config": {
+                  "label": "Button Label",
+                  "placeholder": "View all projects"
+                },
+                "type": "Text"
+              },
+              "link": {
+                "config": {
+                  "allowTargetBlank": true,
+                  "label": "Button Destination",
+                  "placeholder": "Choose a page or URL",
+                  "select": null
+                },
+                "type": "Link"
+              }
+            },
+            "label": "Navigation Buttons",
+            "repeat": true
+          },
+          "type": "Group"
+        }
+      },
+      "version": "initial"
     }
   ]
 }

@@ -41,6 +41,9 @@
             },
             "promo_banner": {
               "type": "SharedSlice"
+            },
+            "testimonials": {
+              "type": "SharedSlice"
             }
           }
         },
