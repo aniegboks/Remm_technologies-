@@ -5,16 +5,8 @@
   ],
   "routes": [
     {
-      "type": "home_page",
-      "path": "/"
-    },
-    {
       "type": "blog",
       "path": "/blog"
-    },
-    {
-      "type": "page",
-      "path": "/:uid"
     },
     {
       "type": "content",
@@ -27,6 +19,26 @@
     {
       "type": "content",
       "path": "/blog/:uid"
+    },
+    {
+      "type": "home_page",
+      "path": "/"
+    },
+    {
+      "type": "page",
+      "path": "/:uid"
+    },
+    {
+      "type": "projects",
+      "path": "/projects"
+    },
+    {
+      "type": "properties",
+      "path": "/properties"
+    },
+    {
+      "type": "subject",
+      "path": "/subject/:uid"
     }
   ]
 }

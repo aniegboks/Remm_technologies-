@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Montserrat, Jost } from "next/font/google";
 import "./globals.css";
+
 import { createClient, repositoryName } from "@/prismicio";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
@@ -8,6 +9,7 @@ import { PrismicPreview } from "@prismicio/next";
 import { ReactLenis } from "@/utils/lenis";
 import { Analytics } from "@vercel/analytics/next";
 import { ChatLoader } from "@/components/ui/chat_loader.";
+
 const montserrat = Montserrat({
   weight: "400",
   style: "normal",
@@ -31,7 +33,8 @@ export async function generateMetadata(): Promise<Metadata> {
     return {
       title: settings.data.site_title || "Remm technologies",
       description:
-        settings.data.meta_description || "Our tailored solutions help your business optimize operations, enhance customer experiences, and safeguard critical data.",
+        settings.data.meta_description ||
+        "Our tailored solutions help your business optimize operations, enhance customer experiences, and safeguard critical data.",
       openGraph: {
         images: settings.data.og_image?.url
           ? [{ url: settings.data.og_image.url }]
@@ -40,9 +43,11 @@ export async function generateMetadata(): Promise<Metadata> {
     };
   } catch (error) {
     console.error("Error fetching metadata:", error);
+
     return {
       title: "Remm technologies",
-      description: "Our tailored solutions help your business optimize operations, enhance customer experiences, and safeguard critical data.",
+      description:
+        "Our tailored solutions help your business optimize operations, enhance customer experiences, and safeguard critical data.",
     };
   }
 }

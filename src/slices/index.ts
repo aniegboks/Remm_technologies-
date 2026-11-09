@@ -14,8 +14,9 @@ import PartnersCarousel from "./PartnersCarousel";
 import PartnersContent from "./PartnersContent";
 import PromoBanner from "./PromoBanner";
 import Properties from "./Properties";
-import Projects from "./Projects";
+import Recent from "./Projects";
 import Testimonials from "./Testimonials";
+import Topic from "./Topic";
 
 export const components = {
 	about: About,
@@ -32,6 +33,7 @@ export const components = {
 	partners_content: PartnersContent,
 	promo_banner: PromoBanner,
 	properties: Properties,
-	recent: Projects,
-	testimonials: Testimonials
+	recent: Recent,
+	testimonials: Testimonials,
+	topic: Topic
 };

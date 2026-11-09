@@ -8,9 +8,6 @@ import { RevealAnimation } from "@/utils/reveal_animation";
 import Image from "next/image";
 import { Content } from "@prismicio/client";
 
-/**
- * Type-safe props for our columns
- */
 interface FooterColumnProps {
   title: string;
   links: any[] | undefined;
@@ -49,24 +46,24 @@ const Footer = async () => {
                 <Link href="/" className="inline-block mb-16 group">
                   <Image
                     src="/images/img-1.png"
-                    alt="Logo"
+                    alt="Remm Technologies Logo"
                     width={60}
                     height={60}
                     className="transition-transform duration-1000 group-hover:rotate-[360deg] brightness-0 invert"
                   />
                 </Link>
                 <p className="text-[14px] md:text-[15px] leading-[1.8] tracking-tight text-white/70 font-light">
-                  Remm technologies is an IT solutions company dedicated to
+                  Remm Technologies is an IT solutions company dedicated to
                   helping businesses grow through innovative and reliable
                   technology services. We provide tailored solutions that
                   optimize operations.
                 </p>
               </div>
 
-              {/* Minimalist Large Newsletter */}
+              {/* Minimalist Newsletter */}
               <div className="w-full lg:w-[400px]">
                 <span className="text-[10px] font-mono uppercase tracking-[0.4em] text-white/40 block mb-10">
-                  / Newsletter Subscription
+                  Newsletter Subscription
                 </span>
                 <form className="relative group border-b border-white/20 pb-4 focus-within:border-white transition-all duration-700">
                   <input
@@ -117,12 +114,11 @@ const Footer = async () => {
                   Office
                 </h2>
                 <p className="text-sm font-medium text-white/90 leading-[2] uppercase tracking-wider">
-                  Health Rite Building, LakeView pack 1 Estate opp.
+                  Health Rite Building, LakeView Park 1 Estate, Opp.
                   <br />
-                  VGC Ikota shopping complex.
+                  VGC Ikota Shopping Complex.
                 </p>
-                <div className="mt-6 inline-flex items-center gap-2 text-[10px] font-mono text-white/40 lg:justify-end uppercase">
-                  <span className="w-2 h-2 rounded-full bg-green-400 shadow-[0_0_8px_rgba(74,222,128,0.6)]" />
+                <div className="mt-6 text-[10px] font-mono text-white/40 uppercase tracking-widest">
                   Local Time {new Date().toLocaleTimeString()}
                 </div>
               </div>
@@ -167,7 +163,7 @@ const FooterColumn = ({
 }: FooterColumnProps) => (
   <div className="flex flex-col items-start">
     <h2 className="text-[10px] font-mono font-bold uppercase tracking-[0.4em] mb-12 text-white/40">
-      {`// ${title}`}
+      {title}
     </h2>
     <div className="flex flex-col gap-5">
       {links?.map((item, index) => (

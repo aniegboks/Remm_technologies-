@@ -45,6 +45,5 @@ export const createClient = (config: ClientConfig = {}) => {
   });
 
   enableAutoPreviews({ client });
-
   return client;
 };
