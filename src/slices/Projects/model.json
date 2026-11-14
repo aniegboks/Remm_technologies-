@@ -1,108 +1,100 @@
 {
+  "description": "Recent projects or properties section",
   "id": "recent",
+  "name": "Recent",
   "type": "SharedSlice",
-  "name": "Projects",
-  "description": "Recent",
   "variations": [
     {
+      "description": "Recent content with configurable heading, navigation, and cards",
+      "docURL": "",
       "id": "default",
-      "name": "Default",
-      "docURL": "...",
-      "version": "initial",
-      "description": "Default",
-      "imageUrl": "",
-      "primary": {
-        "heading": {
-          "type": "StructuredText",
+      "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format",
+      "items": {
+        "display_img": {
           "config": {
-            "label": "heading",
-            "placeholder": "",
+            "constraint": {},
+            "label": "Card Image",
+            "thumbnails": []
+          },
+          "type": "Image"
+        },
+        "display_text": {
+          "config": {
+            "label": "Card Title",
+            "placeholder": "Enter a card title"
+          },
+          "type": "Text"
+        },
+        "display_geo": {
+          "config": {
+            "label": "Location",
+            "placeholder": "Enter a location"
+          },
+          "type": "Text"
+        },
+        "display_link": {
+          "config": {
             "allowTargetBlank": true,
-            "multi": "heading3,heading4,heading5,heading6,strong,em"
-          }
+            "label": "Card Destination",
+            "placeholder": "Choose a page or URL",
+            "select": null
+          },
+          "type": "Link"
         },
-        "paragraph": {
-          "type": "StructuredText",
+        "display_action_label": {
           "config": {
-            "label": "paragraph",
-            "placeholder": "",
-            "allowTargetBlank": true,
-            "multi": "paragraph,strong,em"
-          }
-        },
-        "navigator": {
-          "type": "Group",
-          "config": {
-            "label": "navigator",
-            "repeat": true,
-            "fields": {
-              "link": {
-                "type": "Link",
-                "config": {
-                  "label": "link",
-                  "placeholder": "",
-                  "select": null,
-                  "allowTargetBlank": true,
-                  "allowText": true,
-                  "repeat": false
-                }
-              },
-              "label": {
-                "type": "Text",
-                "config": {
-                  "label": "label",
-                  "placeholder": ""
-                }
-              }
-            }
-          }
-        },
-        "image_navigator": {
-          "type": "Group",
-          "config": {
-            "label": "image navigator",
-            "repeat": true,
-            "fields": {
-              "display_img": {
-                "type": "Image",
-                "config": {
-                  "label": "display img",
-                  "constraint": {
-                    "height": null
-                  },
-                  "thumbnails": []
-                }
-              },
-              "display_link": {
-                "type": "Link",
-                "config": {
-                  "label": "display link",
-                  "placeholder": "",
-                  "select": null,
-                  "allowTargetBlank": true,
-                  "allowText": true,
-                  "repeat": false
-                }
-              },
-              "display_text": {
-                "type": "Text",
-                "config": {
-                  "label": "display text",
-                  "placeholder": ""
-                }
-              },
-              "display_geo": {
-                "type": "Text",
-                "config": {
-                  "label": "display geo",
-                  "placeholder": ""
-                }
-              }
-            }
-          }
+            "label": "Card Action Label",
+            "placeholder": "Learn more"
+          },
+          "type": "Text"
         }
       },
-      "items": {}
+      "name": "Default",
+      "primary": {
+        "heading": {
+          "config": {
+            "allowTargetBlank": true,
+            "label": "Section Heading",
+            "placeholder": "Enter the section heading",
+            "single": "heading1"
+          },
+          "type": "StructuredText"
+        },
+        "paragraph": {
+          "config": {
+            "label": "Section Description",
+            "multi": "paragraph",
+            "placeholder": "Describe this section"
+          },
+          "type": "StructuredText"
+        },
+        "navigator": {
+          "config": {
+            "fields": {
+              "label": {
+                "config": {
+                  "label": "Button Label",
+                  "placeholder": "View all projects"
+                },
+                "type": "Text"
+              },
+              "link": {
+                "config": {
+                  "allowTargetBlank": true,
+                  "label": "Button Destination",
+                  "placeholder": "Choose a page or URL",
+                  "select": null
+                },
+                "type": "Link"
+              }
+            },
+            "label": "Navigation Buttons",
+            "repeat": true
+          },
+          "type": "Group"
+        }
+      },
+      "version": "initial"
     }
   ]
 }

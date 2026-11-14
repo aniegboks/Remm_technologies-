@@ -1,52 +1,107 @@
 {
+  "description": "Reusable testimonial carousel",
   "id": "testimonials",
-  "type": "SharedSlice",
   "name": "Testimonials",
-  "description": "Testimonials",
+  "type": "SharedSlice",
   "variations": [
     {
+      "description": "A carousel with text and image testimonial cards",
+      "docURL": "https://prismic.io/docs/slices",
       "id": "default",
-      "name": "Default",
-      "docURL": "...",
-      "version": "initial",
-      "description": "Default",
       "imageUrl": "",
+      "items": {},
+      "name": "Default",
       "primary": {
-        "testimonials": {
-          "type": "Group",
+        "section_heading": {
           "config": {
-            "label": "Testimonials",
-            "repeat": true,
+            "allowTargetBlank": false,
+            "label": "Section Heading",
+            "multi": "heading1,heading2",
+            "placeholder": "What our clients say"
+          },
+          "type": "StructuredText"
+        },
+        "section_description": {
+          "config": {
+            "label": "Section Description",
+            "placeholder": "Optional introduction to the testimonials"
+          },
+          "type": "Text"
+        },
+        "testimonials": {
+          "config": {
             "fields": {
-              "testimonial_image": {
-                "type": "Image",
+              "card_type": {
                 "config": {
-                  "label": "testimonial image",
+                  "label": "Card Layout",
+                  "options": [
+                    "text",
+                    "image"
+                  ],
+                  "placeholder": "Choose a layout"
+                },
+                "type": "Select"
+              },
+              "name": {
+                "config": {
+                  "label": "Person or Organization",
+                  "placeholder": "Name"
+                },
+                "type": "Text"
+              },
+              "role": {
+                "config": {
+                  "label": "Role or Additional Detail",
+                  "placeholder": "Job title, company, or context"
+                },
+                "type": "Text"
+              },
+              "avatar": {
+                "config": {
                   "constraint": {},
+                  "label": "Profile Image",
                   "thumbnails": []
-                }
+                },
+                "type": "Image"
               },
-              "heading": {
-                "type": "StructuredText",
+              "quote": {
                 "config": {
-                  "label": "Heading ",
-                  "placeholder": "",
-                  "allowTargetBlank": true,
-                  "multi": "heading1,heading2"
-                }
+                  "allowTargetBlank": false,
+                  "label": "Testimonial",
+                  "multi": "paragraph",
+                  "placeholder": "Enter the testimonial"
+                },
+                "type": "StructuredText"
               },
-              "paragraph": {
-                "type": "Text",
+              "image": {
                 "config": {
-                  "label": "paragraph",
-                  "placeholder": ""
-                }
+                  "constraint": {},
+                  "label": "Full Card Image",
+                  "thumbnails": []
+                },
+                "type": "Image"
+              },
+              "background_style": {
+                "config": {
+                  "label": "Text Card Background",
+                  "options": [
+                    "slate",
+                    "purple",
+                    "blue",
+                    "white"
+                  ],
+                  "placeholder": "Choose a background"
+                },
+                "type": "Select"
               }
-            }
-          }
+            },
+            "label": "Testimonials",
+            "repeat": true
+          },
+          "type": "Group"
         }
       },
-      "items": {}
+      "version": "initial"
     }
   ]
 }

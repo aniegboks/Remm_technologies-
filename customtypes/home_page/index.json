@@ -1,21 +1,16 @@
 {
   "format": "page",
   "id": "home_page",
-  "label": "home page",
-  "repeatable": false,
-  "status": true,
   "json": {
     "Main": {
       "title": {
-        "type": "Text",
         "config": {
           "label": "title",
           "placeholder": ""
-        }
+        },
+        "type": "Text"
       },
       "slices": {
-        "type": "Slices",
-        "fieldset": "Slice Zone",
         "config": {
           "choices": {
             "client_carousel": {
@@ -52,7 +47,9 @@
               "type": "SharedSlice"
             }
           }
-        }
+        },
+        "fieldset": "Slice Zone",
+        "type": "Slices"
       }
     },
     "SEO & Metadata": {
@@ -82,5 +79,8 @@
         "type": "Image"
       }
     }
-  }
+  },
+  "label": "home page",
+  "repeatable": false,
+  "status": true
 }

@@ -1,19 +1,11 @@
 {
   "format": "page",
   "id": "projects",
-  "label": "projects",
-  "repeatable": false,
-  "status": true,
   "json": {
     "Main": {
       "slices": {
-        "type": "Slices",
-        "fieldset": "Slice Zone",
         "config": {
           "choices": {
-            "testimonials": {
-              "type": "SharedSlice"
-            },
             "client_carousel": {
               "type": "SharedSlice"
             },
@@ -22,9 +14,20 @@
             },
             "hero": {
               "type": "SharedSlice"
+            },
+            "faq": {
+              "type": "SharedSlice"
+            },
+            "recent": {
+              "type": "SharedSlice"
+            },
+            "partners_carousel": {
+              "type": "SharedSlice"
             }
           }
-        }
+        },
+        "fieldset": "Slice Zone",
+        "type": "Slices"
       }
     },
     "SEO & Metadata": {
@@ -54,5 +57,8 @@
         "type": "Image"
       }
     }
-  }
+  },
+  "label": "services",
+  "repeatable": false,
+  "status": true
 }

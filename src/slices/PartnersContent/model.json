@@ -1,155 +1,155 @@
 {
-  "id": "partners_content",
-  "type": "SharedSlice",
-  "name": "PartnersContent",
   "description": "PartnersContent",
+  "id": "partners_content",
+  "name": "PartnersContent",
+  "type": "SharedSlice",
   "variations": [
     {
-      "id": "default",
-      "name": "Default",
-      "docURL": "...",
-      "version": "initial",
       "description": "Default",
-      "imageUrl": "",
+      "docURL": "...",
+      "id": "default",
+      "imageUrl": "https://images.prismic.io/prismicprojecta/shared-slices/partners_content/default/517d3c6b93b4474875c6a587652cdcb720a4a18d.png?auto=compress%2Cformat",
+      "items": {},
+      "name": "Default",
       "primary": {
         "partner_img": {
-          "type": "Image",
           "config": {
-            "label": "partner_img ",
             "constraint": {},
+            "label": "partner_img ",
             "thumbnails": []
-          }
+          },
+          "type": "Image"
         },
         "title": {
-          "type": "Text",
           "config": {
             "label": "title",
             "placeholder": ""
-          }
+          },
+          "type": "Text"
         },
         "content": {
-          "type": "Text",
           "config": {
             "label": "content ",
             "placeholder": ""
-          }
+          },
+          "type": "Text"
         },
         "button": {
-          "type": "Group",
           "config": {
-            "label": "Button",
-            "repeat": true,
             "fields": {
               "button_label": {
-                "type": "Text",
                 "config": {
                   "label": "Button Label",
                   "placeholder": ""
-                }
+                },
+                "type": "Text"
               },
               "button_link": {
-                "type": "Link",
                 "config": {
-                  "label": "Button Link",
-                  "placeholder": "",
-                  "select": null,
                   "allowTargetBlank": true,
                   "allowText": true,
-                  "repeat": false
-                }
+                  "label": "Button Link",
+                  "placeholder": "",
+                  "repeat": false,
+                  "select": null
+                },
+                "type": "Link"
               }
-            }
-          }
+            },
+            "label": "Button",
+            "repeat": true
+          },
+          "type": "Group"
         },
         "reason_caption": {
-          "type": "Text",
           "config": {
             "label": "Reason_Caption",
             "placeholder": ""
-          }
+          },
+          "type": "Text"
         },
         "partner_variant_content": {
-          "type": "Group",
           "config": {
-            "label": "Partner Variant Content",
-            "repeat": true,
             "fields": {
               "variant_image": {
-                "type": "Image",
                 "config": {
-                  "label": "Variant Image",
                   "constraint": {},
+                  "label": "Variant Image",
                   "thumbnails": []
-                }
+                },
+                "type": "Image"
               },
               "variant_heading": {
-                "type": "Text",
                 "config": {
                   "label": "Variant Heading ",
                   "placeholder": ""
-                }
+                },
+                "type": "Text"
               },
               "variant_content": {
-                "type": "Text",
                 "config": {
                   "label": "Variant Content ",
                   "placeholder": ""
-                }
+                },
+                "type": "Text"
               }
-            }
-          }
+            },
+            "label": "Partner Variant Content",
+            "repeat": true
+          },
+          "type": "Group"
         },
         "partner_content": {
-          "type": "Group",
           "config": {
-            "label": "Partner_Content ",
-            "repeat": true,
             "fields": {
               "partner_image": {
-                "type": "Image",
                 "config": {
-                  "label": "Partner Image",
                   "constraint": {},
+                  "label": "Partner Image",
                   "thumbnails": []
-                }
+                },
+                "type": "Image"
               },
               "partner_heading": {
-                "type": "Text",
                 "config": {
                   "label": "Partner Heading",
                   "placeholder": ""
-                }
+                },
+                "type": "Text"
               },
               "partner_content": {
-                "type": "Text",
                 "config": {
                   "label": "Partner Content ",
                   "placeholder": ""
-                }
+                },
+                "type": "Text"
               },
               "partner_link": {
-                "type": "Link",
                 "config": {
-                  "label": "Partner Link",
-                  "placeholder": "",
-                  "select": null,
                   "allowTargetBlank": true,
                   "allowText": true,
-                  "repeat": false
-                }
+                  "label": "Partner Link",
+                  "placeholder": "",
+                  "repeat": false,
+                  "select": null
+                },
+                "type": "Link"
               },
               "partner_label": {
-                "type": "Text",
                 "config": {
                   "label": "Partner Label",
                   "placeholder": ""
-                }
+                },
+                "type": "Text"
               }
-            }
-          }
+            },
+            "label": "Partner_Content ",
+            "repeat": true
+          },
+          "type": "Group"
         }
       },
-      "items": {}
+      "version": "initial"
     }
   ]
 }

@@ -1,124 +1,167 @@
+
 "use client";
 
-import { FC } from "react";
-import { Content } from "@prismicio/client";
-import { SliceComponentProps, PrismicRichText } from "@prismicio/react";
-import Container from "@/components/ui/container";
-import { PrismicNextLink } from "@prismicio/next";
-import { PrismicNextImage } from "@prismicio/next";
-import { MapPin, ArrowUpRight } from "lucide-react";
+import type { FC } from "react";
+import { Content, isFilled } from "@prismicio/client";
+import {
+  PrismicRichText,
+  SliceComponentProps,
+} from "@prismicio/react";
+import { PrismicNextImage, PrismicNextLink } from "@prismicio/next";
+import { ArrowUpRight, MapPin, X } from "lucide-react";
 import { motion } from "framer-motion";
+
+import Container from "@/components/ui/container";
 
 export type RecentProps = SliceComponentProps<Content.RecentSlice>;
 
 const Recent: FC<RecentProps> = ({ slice }) => {
+  const { heading, paragraph, navigator } = slice.primary;
+
+  const cards = slice.items ?? [];
+
   return (
-    <section className="py-24 bg-[#fbfbfb] overflow-hidden selection:bg-black selection:text-white">
+    <section className="bg-white py-20 selection:bg-neutral-900 selection:text-white">
       <Container>
-        {/* HEADER SECTION */}
-        <div className="flex flex-col lg:flex-row justify-between items-end mb-16 gap-8">
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
+        {/* Header */}
+        <div className="mb-12 flex flex-col items-end justify-between gap-8 lg:flex-row">
+          <motion.div
+            initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
             className="max-w-2xl"
           >
-            <span className="text-[10px] font-mono font-bold uppercase tracking-[0.5em] text-[#034966] mb-4 block">
-              Selection // 002
-            </span>
-            <div className="text-5xl md:text-7xl font-body font-medium tracking-tighter text-black leading-[0.85]">
-              <PrismicRichText field={slice.primary.heading} />
-            </div>
-            <div className="mt-6 text-sm md:text-base font-body text-neutral-500 max-w-md leading-relaxed">
-              <PrismicRichText field={slice.primary.paragraph} />
-            </div>
+            {isFilled.richText(heading) && (
+              <div className="font-body text-3xl font-bold tracking-tight text-neutral-900 md:text-5xl">
+                <PrismicRichText field={heading} />
+              </div>
+            )}
+
+            {isFilled.richText(paragraph) && (
+              <div className="mt-4 max-w-md font-body text-sm leading-relaxed text-neutral-500 md:text-base">
+                <PrismicRichText field={paragraph} />
+              </div>
+            )}
           </motion.div>
 
-          <motion.div 
-             initial={{ opacity: 0 }}
-             whileInView={{ opacity: 1 }}
-             className="flex gap-4"
-          >
-            {slice.primary.navigator.map(({ link, label }) => (
-              <PrismicNextLink 
-                key={label} 
-                field={link}
-                className="group flex items-center gap-2 px-6 py-3 bg-white border border-neutral-200 rounded-full text-[11px] font-mono uppercase tracking-widest hover:bg-black hover:text-white transition-all duration-500"
+          {navigator?.some(
+            (item) => isFilled.link(item.link) && item.label?.trim()
+          ) && (
+              <motion.div
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+                viewport={{ once: true }}
+                className="flex flex-wrap gap-3"
               >
-                {label}
-                <ArrowUpRight size={14} className="group-hover:rotate-45 transition-transform duration-300" />
-              </PrismicNextLink>
-            ))}
-          </motion.div>
+                {navigator.map((item, index) => {
+                  if (!isFilled.link(item.link) || !item.label?.trim()) {
+                    return null;
+                  }
+
+                  return (
+                    <PrismicNextLink
+                      key={`navigator-${index}`}
+                      field={item.link}
+                      className="group flex items-center gap-2 rounded-md border border-neutral-200 bg-white px-5 py-2.5 text-xs font-medium text-neutral-900 transition-all duration-300 hover:bg-neutral-900 hover:text-white"
+                    >
+                      {item.label}
+                      <ArrowUpRight
+                        size={14}
+                        className="transition-transform duration-300 group-hover:rotate-45"
+                      />
+                    </PrismicNextLink>
+                  );
+                })}
+              </motion.div>
+            )}
         </div>
 
-        {/* BENTO GRID */}
-        <div className="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-6 auto-rows-[300px] md:auto-rows-[350px] gap-4">
-          {slice.primary.image_navigator.map(
-            ({ display_img, display_link, display_text, display_geo }, index) => {
-              // Logic to create the Bento pattern
-              // Card 1: Large (spans 2x2)
-              // Card 2: Tall (spans 1x2)
-              // Card 3 & 4: Small (spans 1x1)
-              const isLarge = index === 0;
-              const isTall = index === 1;
+        {/* Cards */}
+        {cards.length > 0 && (
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {cards.map((item, index) => {
+              const title = item.display_text?.trim() || "";
+              const location = item.display_geo?.trim() || "";
+              const actionLabel =
+                item.display_action_label?.trim() || "Learn more";
+
+              const hasImage = isFilled.image(item.display_img);
+              const hasLink = isFilled.link(item.display_link);
 
               return (
-                <motion.div
-                  key={display_text}
-                  initial={{ opacity: 0, scale: 0.95 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.8, delay: index * 0.1 }}
-                  className={`relative group overflow-hidden rounded-[2rem] bg-neutral-100 ${
-                    isLarge ? "md:col-span-2 md:row-span-2" : 
-                    isTall ? "md:col-span-2 md:row-span-2 lg:col-span-2" : 
-                    "md:col-span-2 lg:col-span-2"
-                  }`}
+                <motion.article
+                  key={`recent-card-${index}`}
+                  initial={{ opacity: 0, y: 15 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: index * 0.08 }}
+                  viewport={{ once: true }}
+                  className="group relative flex flex-col justify-between overflow-hidden rounded-lg border border-neutral-200/80 bg-white transition-all duration-300 ease-out hover:border-neutral-300 hover:shadow-xs"
                 >
-                  <PrismicNextLink field={display_link} className="absolute inset-0 z-20">
-                    <span className="sr-only">View {display_text}</span>
-                  </PrismicNextLink>
+                  {/* Card image */}
+                  <div>
+                    <div className="relative h-52 w-full overflow-hidden bg-neutral-100">
+                      {hasImage && (
+                        <PrismicNextImage
+                          field={item.display_img}
+                          fill
+                          sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                          className="object-cover transition-transform duration-500 group-hover:scale-105"
+                        />
+                      )}
 
-                  {/* Image with Ken Burns Effect */}
-                  <div className="absolute inset-0 z-0">
-                    <PrismicNextImage
-                      field={display_img}
-                      fill
-                      className="object-cover transition-transform duration-1000 group-hover:scale-110 grayscale-[0.5] group-hover:grayscale-0"
-                    />
-                    {/* Darker Gradient Overlay for Bento feel */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-500" />
+                      {!hasImage && (
+                        <div
+                          className="flex h-full items-center justify-center text-sm text-neutral-400"
+                          aria-hidden="true"
+                        >
+                          No image available
+                        </div>
+                      )}
+
+                    </div>
+
+                    {/* Card content */}
+                    <div className="p-6">
+                      {title && (
+                        <h3 className="mb-2 text-xl font-bold tracking-tight text-neutral-900">
+                          {title}
+                        </h3>
+                      )}
+
+                      {location && (
+                        <div className="mb-3 flex items-center text-xs text-neutral-500">
+                          <span>{location}</span>
+                        </div>
+                      )}
+                    </div>
                   </div>
 
-                  {/* Top-Right Tag */}
-                  <div className="absolute top-6 right-6 z-10">
-                     <div className="w-10 h-10 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-[-10px] group-hover:translate-y-0">
-                        <ArrowUpRight size={18} />
-                     </div>
+                  {/* CMS-configurable action */}
+                  <div className="px-6 pb-6 pt-0">
+                    {hasLink ? (
+                      <PrismicNextLink
+                        field={item.display_link}
+                        className="relative z-30 inline-flex items-center gap-1 text-xs font-semibold text-neutral-900 transition-colors hover:text-neutral-600"
+                      >
+                        {actionLabel}
+                        <ArrowUpRight
+                          size={13}
+                          className="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                        />
+                      </PrismicNextLink>
+                    ) : (
+                      <span className="inline-flex items-center text-xs font-semibold text-neutral-400">
+                        {actionLabel}
+                      </span>
+                    )}
                   </div>
-
-                  {/* Content Overlay */}
-                  <div className="absolute bottom-0 left-0 w-full p-8 z-10">
-                    <motion.div className="flex flex-col gap-2">
-                       <span className="text-[9px] font-mono text-[#034966] uppercase tracking-[0.3em]">
-                         Project.v0{index + 1}
-                       </span>
-                       <h3 className={`font-body font-medium text-white leading-none tracking-tighter ${
-                         isLarge ? "text-4xl" : "text-2xl"
-                       }`}>
-                         {display_text}
-                       </h3>
-                       <div className="flex items-center text-white/50 mt-2">
-                          <MapPin size={12} className="mr-2" />
-                          <span className="text-[10px] font-mono uppercase tracking-widest">{display_geo}</span>
-                       </div>
-                    </motion.div>
-                  </div>
-                </motion.div>
+                </motion.article>
               );
-            }
-          )}
-        </div>
+            })}
+          </div>
+        )}
       </Container>
     </section>
   );

@@ -1,36 +1,59 @@
 {
+  "description": "Reusable call-to-action section",
   "id": "cta",
-  "type": "SharedSlice",
   "name": "Cta",
-  "description": "Cta",
+  "type": "SharedSlice",
   "variations": [
     {
+      "description": "Call-to-action section with background image and button",
+      "docURL": "https://prismic.io/docs/slices",
       "id": "default",
-      "name": "Default",
-      "docURL": "...",
-      "version": "initial",
-      "description": "Default",
       "imageUrl": "",
+      "items": {},
+      "name": "Default",
       "primary": {
         "cta_img": {
-          "type": "Image",
           "config": {
-            "label": "cta img",
             "constraint": {},
+            "label": "Background Image",
             "thumbnails": []
-          }
+          },
+          "type": "Image"
         },
         "cta_heading": {
-          "type": "StructuredText",
           "config": {
-            "label": "cta heading",
-            "placeholder": "",
+            "allowTargetBlank": false,
+            "label": "Heading",
+            "multi": "heading1,heading2,heading3,heading4,heading5,heading6,strong,em",
+            "placeholder": "Ready to get started?"
+          },
+          "type": "StructuredText"
+        },
+        "cta_description": {
+          "config": {
+            "label": "Description",
+            "placeholder": "Add a short supporting message"
+          },
+          "type": "Text"
+        },
+        "button_label": {
+          "config": {
+            "label": "Button Label",
+            "placeholder": "Get started"
+          },
+          "type": "Text"
+        },
+        "button_link": {
+          "config": {
             "allowTargetBlank": true,
-            "multi": "heading1,heading2,heading3,heading4,heading5,heading6,strong,em"
-          }
+            "label": "Button Link",
+            "placeholder": "Select a page or enter a URL",
+            "select": null
+          },
+          "type": "Link"
         }
       },
-      "items": {}
+      "version": "initial"
     }
   ]
 }

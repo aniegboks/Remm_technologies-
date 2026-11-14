@@ -14,16 +14,13 @@ const Faq: FC<FaqProps> = ({ slice }) => {
   const [displayIndex, setDisplayIndex] = useState<number | null>(null);
 
   return (
-    <section className="py-32 bg-[#FCFCFC]">
+    <section className="py-32 bg-white">
       <Container>
         <RevealAnimation>
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
-            
+
             {/* LEFT SIDE: Heading */}
             <div className="lg:col-span-5 lg:sticky lg:top-32 h-fit">
-              <span className="text-[10px] font-mono font-bold uppercase tracking-[0.3em] text-[#034966] mb-4 block">
-                Information_Base
-              </span>
               <span className="text-4xl md:text-5xl font-heading font-semibold tracking-tighter text-neutral-900 mb-6 leading-[0.95]">
                 <PrismicRichText field={slice.primary.heading} />
               </span>
@@ -54,25 +51,25 @@ const Faq: FC<FaqProps> = ({ slice }) => {
                         <div className="text-xl font-heading font-medium tracking-tight text-neutral-900 pr-4">
                           <PrismicRichText field={question} />
                         </div>
-                        
+
                         {/* --- CUSTOM INTERACTIVE DROP ICON --- */}
                         <div className={twMerge(
                           "relative flex h-10 w-10 shrink-0 items-center justify-center rounded-full transition-all duration-500",
                           isOpen ? " bg-[#034966] text-white rotate-180" : "bg-neutral-100 text-neutral-500"
                         )}>
-                          <svg 
-                            width="12" 
-                            height="8" 
-                            viewBox="0 0 12 8" 
-                            fill="none" 
+                          <svg
+                            width="12"
+                            height="8"
+                            viewBox="0 0 12 8"
+                            fill="none"
                             xmlns="http://www.w3.org/2000/svg"
                             className="transition-transform"
                           >
-                            <path 
-                              d="M1 1.5L6 6.5L11 1.5" 
-                              stroke="currentColor" 
-                              strokeWidth="2" 
-                              strokeLinecap="round" 
+                            <path
+                              d="M1 1.5L6 6.5L11 1.5"
+                              stroke="currentColor"
+                              strokeWidth="2"
+                              strokeLinecap="round"
                               strokeLinejoin="round"
                             />
                           </svg>

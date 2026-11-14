@@ -1,178 +1,215 @@
 "use client";
 
-import { FC, useState, useEffect, useCallback } from "react";
-import { Content } from "@prismicio/client";
-import { SliceComponentProps, PrismicRichText } from "@prismicio/react";
-import { PrismicNextImage } from "@prismicio/next";
-import { motion, AnimatePresence } from "framer-motion";
+import { useState, useEffect, useMemo } from "react";
+import { asText, isFilled } from "@prismicio/client";
+import type { ImageField, RichTextField, Content } from "@prismicio/client";
+import type { SliceComponentProps } from "@prismicio/react";
+import { motion } from "framer-motion";
 
-export type TestimonialsProps = SliceComponentProps<Content.TestimonialsSlice>;
+type TestimonialItem = {
+  card_type?: string | null;
+  name?: string | null;
+  role?: string | null;
+  avatar?: ImageField;
+  quote?: RichTextField;
+  image?: ImageField;
+  background_style?: string | null;
+  testimonial_image?: ImageField;
+  heading?: RichTextField;
+  paragraph?: string | null;
+};
 
-const Testimonials: FC<TestimonialsProps> = ({ slice }) => {
-  const [activeIndex, setActiveIndex] = useState(0);
-  const testimonials = slice.primary.testimonials || [];
+type TestimonialsPrimary = {
+  section_heading?: RichTextField;
+  section_description?: RichTextField;
+  testimonials?: TestimonialItem[] | null;
+};
 
-  // 1. AUTO-PLAY LOGIC
-  const nextTestimonial = useCallback(() => {
-    setActiveIndex((prev) => (prev + 1) % testimonials.length);
+type Props = SliceComponentProps<Content.TestimonialsSlice>;
+
+const BACKGROUND_STYLES: Record<string, string> = {
+  slate: "bg-slate-50 border border-slate-100",
+  purple: "bg-purple-50 border border-purple-100",
+  blue: "bg-blue-50 border border-blue-100",
+  white: "bg-white border border-slate-100",
+};
+
+const Testimonials = ({ slice }: Props) => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isTransitioning, setIsTransitioning] = useState(true);
+
+  const primary = slice.primary as unknown as TestimonialsPrimary;
+  const testimonials = primary.testimonials ?? [];
+  const heading = asText(primary.section_heading) || "What people say";
+  const description =
+    typeof primary.section_description === "string"
+      ? primary.section_description
+      : "";
+
+  // Duplicate testimonials array 3x to allow seamless infinite looping leftward
+  const extendedTestimonials = useMemo(() => {
+    if (testimonials.length === 0) return [];
+    return [...testimonials, ...testimonials, ...testimonials];
+  }, [testimonials]);
+
+  // Auto-play effect: keeps ticking index forward infinitely
+  useEffect(() => {
+    if (testimonials.length <= 1) return;
+
+    const interval = setInterval(() => {
+      setCurrentIndex((prev) => prev + 1);
+    }, 5000); // Changes slide every 5 seconds
+
+    return () => clearInterval(interval);
   }, [testimonials.length]);
 
-  const prevTestimonial = () => {
-    setActiveIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length);
-  };
-
+  // Handle seamless loop reset when reaching the boundary of the cloned array
   useEffect(() => {
-    const interval = setInterval(nextTestimonial, 6000); // 6 seconds per slide
-    return () => clearInterval(interval);
-  }, [nextTestimonial]);
+    if (testimonials.length <= 1) return;
 
-  // 2. SPLIT-TEXT HELPER
-  // This wraps words in spans so they can be staggered
-  const SplitText = ({ text }: { text: string }) => {
-    return (
-      <span className="inline-block overflow-hidden pb-1">
-        {text.split(" ").map((word, i) => (
-          <motion.span
-            key={i}
-            className="inline-block mr-[0.2em]"
-            initial={{ y: "100%" }}
-            animate={{ y: 0 }}
-            transition={{ 
-              duration: 0.8, 
-              delay: i * 0.05, 
-              ease: [0.2, 0.65, 0.3, 0.9] 
-            }}
-          >
-            {word}
-          </motion.span>
-        ))}
-      </span>
-    );
-  };
+    if (currentIndex >= testimonials.length * 2) {
+      const timeout = setTimeout(() => {
+        setIsTransitioning(false);
+        setCurrentIndex(currentIndex % testimonials.length);
+      }, 500); // Matches the animation duration approximately to snap invisibly
 
-  if (testimonials.length === 0) return null;
+      return () => clearTimeout(timeout);
+    } else if (!isTransitioning) {
+      const frame = requestAnimationFrame(() => {
+        setIsTransitioning(true);
+      });
+      return () => cancelAnimationFrame(frame);
+    }
+  }, [currentIndex, testimonials.length, isTransitioning]);
 
   return (
-    <section className="relative w-full py-40 bg-white overflow-hidden">
-      {/* AMBIENT BLUSH */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-[20%] right-[-5%] w-[45vw] h-[45vw] bg-blue-50/40 rounded-full blur-[140px]" />
-        <div className="absolute bottom-[-5%] left-[-5%] w-[35vw] h-[35vw] bg-red-50/30 rounded-full blur-[120px]" />
-      </div>
-
-      <div className="relative z-10 max-w-6xl mx-auto px-6">
-        
-        {/* SECTION LABEL */}
-        <div className="flex flex-col mb-20">
-          <motion.span 
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            className="text-[10px] font-mono uppercase tracking-[0.4em] text-slate-400 mb-4"
-          >
-            Curated Feedback // 0{testimonials.length}
-          </motion.span>
-          <motion.div 
-            initial={{ width: 0 }}
-            whileInView={{ width: 48 }}
-            className="h-px bg-slate-200" 
-          />
-        </div>
-
-        <div className="relative min-h-[500px]">
-          <AnimatePresence mode="wait">
-            <motion.div 
-              key={activeIndex}
-              className="grid grid-cols-1 md:grid-cols-12 gap-16 items-center w-full"
-            >
-              {/* IMAGE PORTRAIT */}
-              <div className="md:col-span-5">
-                <motion.div 
-                  initial={{ opacity: 0, scale: 0.9, rotate: -2 }}
-                  animate={{ opacity: 1, scale: 1, rotate: 0 }}
-                  exit={{ opacity: 0, scale: 1.1 }}
-                  transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-                  className="p-1 rounded-[2.5rem] bg-gradient-to-br from-slate-200 to-slate-100/20 shadow-2xl"
-                >
-                  <div className="p-2 bg-white rounded-[2.3rem]">
-                    <div className="relative aspect-[4/5] w-full overflow-hidden rounded-[1.8rem] bg-slate-50">
-                      <PrismicNextImage 
-                        field={testimonials[activeIndex].testimonial_image} 
-                        fill
-                        className="object-cover grayscale hover:grayscale-0 transition-all duration-1000 ease-in-out"
-                        fallbackAlt="" 
-                        sizes="(max-width: 768px) 100vw, 40vw"
-                      />
-                    </div>
-                  </div>
-                </motion.div>
-              </div>
-
-              {/* TEXT CONTENT */}
-              <div className="md:col-span-7 flex flex-col pt-8 md:pt-0">
-                <div className="mb-10 text-[#034966]/50">
-                    <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
-                        <path d="M14 24H6V16H14V24ZM14 24C14 29 10 33 6 33" stroke="currentColor" strokeWidth="1.5"/>
-                        <path d="M38 24H30V16H38V24ZM38 24C38 29 34 33 30 33" stroke="currentColor" strokeWidth="1.5"/>
-                    </svg>
-                </div>
-
-                {/* HEADING WITH SPLIT TEXT ANIMATION */}
-                <span className="text-4xl md:text-6xl font-bold tracking-tight text-slate-900 leading-[1.1] mb-10">
-                   {/* Note: For rich text fields, we extract the first text node 
-                     to apply the split-text effect properly. 
-                   */}
-                   <PrismicRichText field={testimonials[activeIndex].heading} />
-                </span>
-
-                <motion.div 
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.4 }}
-                  className="text-xl text-slate-500 font-light leading-relaxed max-w-xl italic border-l-2 border-slate-100 pl-8"
-                >
-                   "{testimonials[activeIndex].paragraph}"
-                </motion.div>
-              </div>
-            </motion.div>
-          </AnimatePresence>
-
-          {/* CONTROLS */}
-          <div className="mt-16 md:mt-0 md:absolute -bottom-12 right-0 flex items-center gap-8">
-            <div className="flex items-baseline gap-3 font-mono text-slate-400">
-              <span className="text-xl text-slate-900 font-bold leading-none">
-                {String(activeIndex + 1).padStart(2, '0')}
-              </span>
-              <span className="text-xs opacity-50">/</span>
-              <span className="text-xs">{String(testimonials.length).padStart(2, '0')}</span>
-            </div>
-            
-            <div className="flex gap-3">
-              <button 
-                onClick={prevTestimonial} 
-                className="w-14 h-14 rounded-full border border-slate-200 flex items-center justify-center hover:bg-slate-50 transition-all active:scale-95"
-              >
-                ←
-              </button>
-              <button 
-                onClick={nextTestimonial} 
-                className="w-14 h-14 rounded-full bg-slate-900 text-white flex items-center justify-center hover:shadow-xl transition-all active:scale-95"
-              >
-                →
-              </button>
-            </div>
+    <section className="w-full overflow-hidden bg-white py-20 text-slate-900">
+      <div className="mx-auto max-w-7xl px-6">
+        {/* HEADER */}
+        <div className="mb-12 flex items-center justify-between gap-6">
+          <div>
+            <h2 className="text-4xl font-bold tracking-tight md:text-5xl">
+              {heading}
+            </h2>
+            {description && (
+              <p className="mt-4 max-w-2xl text-slate-600">
+                {description}
+              </p>
+            )}
           </div>
         </div>
 
-        {/* PROGRESS BAR (Syncs with Auto-play) */}
-        <div className="w-full h-[1px] bg-slate-100 mt-24 relative overflow-hidden">
-            <motion.div 
-                key={activeIndex}
-                initial={{ x: "-100%" }}
-                animate={{ x: "0%" }}
-                transition={{ duration: 6, ease: "linear" }}
-                className="absolute top-0 left-0 w-full h-full bg-[#034966]/60"
-            />
-        </div>
+        {/* CAROUSEL */}
+        {testimonials.length > 0 ? (
+          <div className="relative flex flex-col items-center overflow-hidden">
+            <div className="w-full overflow-hidden">
+              <motion.div
+                className={`flex gap-6 ${testimonials.length < 3 ? "md:justify-start" : ""}`}
+                animate={{ x: `-${currentIndex * 344}px` }} // Assumes roughly 320px width + 24px gap
+                transition={
+                  isTransitioning
+                    ? { type: "spring", stiffness: 300, damping: 30 }
+                    : { duration: 0 }
+                }
+              >
+                {extendedTestimonials.map((item, index) => {
+                  const name = item.name?.trim() || asText(item.heading) || "Student";
+                  const role = item.role?.trim() || "Student testimonial";
+                  const isImageCard = item.card_type === "image";
+
+                  const fullImage = isFilled.image(item.image)
+                    ? item.image
+                    : item.testimonial_image;
+                  const avatar = isFilled.image(item.avatar)
+                    ? item.avatar
+                    : item.testimonial_image;
+
+                  const quote = asText(item.quote) || item.paragraph || "";
+                  const backgroundClass =
+                    BACKGROUND_STYLES[item.background_style ?? "slate"] ??
+                    BACKGROUND_STYLES.slate;
+
+                  if (isImageCard) {
+                    return (
+                      <article
+                        key={`${name}-${index}`}
+                        className="relative flex h-auto min-h-[360px] flex-1 min-w-[320px] max-w-2xl flex-col justify-end overflow-hidden rounded-md bg-slate-900 p-6 text-white shadow-sm"
+                      >
+                        {isFilled.image(fullImage) && (
+                          <img
+                            src={fullImage.url}
+                            alt={fullImage.alt || name}
+                            className="absolute inset-0 h-full w-full object-cover opacity-90 transition-transform duration-700 hover:scale-105"
+                          />
+                        )}
+                        <div
+                          className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"
+                          aria-hidden="true"
+                        />
+                        <div className="relative z-10 mt-auto">
+                          <h3 className="text-lg font-bold text-white">{name}</h3>
+                          <p className="mt-0.5 text-sm text-slate-300">{role}</p>
+                        </div>
+                      </article>
+                    );
+                  }
+
+                  return (
+                    <article
+                      key={`${name}-${index}`}
+                      className={`relative flex h-auto min-h-[280px] flex-1 min-w-[320px] max-w-2xl flex-col justify-between overflow-hidden rounded-md p-6 shadow-sm ${backgroundClass}`}
+                    >
+                      <div className="flex flex-col gap-4">
+                        {isFilled.image(avatar) && (
+                          <div className="h-12 w-12 overflow-hidden rounded-full bg-slate-200">
+                            <img
+                              src={avatar.url}
+                              alt={avatar.alt || name}
+                              className="h-full w-full object-cover"
+                            />
+                          </div>
+                        )}
+                        {quote && (
+                          <p className="mb-4 text-sm leading-relaxed text-slate-700">
+                            &ldquo;{quote}&rdquo;
+                          </p>
+                        )}
+                      </div>
+                      <div className="mt-auto border-t border-slate-200/60 pt-4">
+                        <h3 className="text-base font-bold text-slate-900">{name}</h3>
+                        <p className="mt-0.5 text-xs text-slate-500">{role}</p>
+                      </div>
+                    </article>
+                  );
+                })}
+              </motion.div>
+            </div>
+
+            {/* DOT INDICATORS */}
+            {testimonials.length > 1 && (
+              <div className="mt-10 flex items-center justify-center gap-2">
+                {testimonials.map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => {
+                      setIsTransitioning(true);
+                      setCurrentIndex(index);
+                    }}
+                    aria-label={`Go to slide ${index + 1}`}
+                    className={`h-2.5 rounded-full transition-all duration-300 ${currentIndex % testimonials.length === index
+                      ? "w-8 bg-slate-900"
+                      : "w-2.5 bg-slate-300 hover:bg-slate-400"
+                      }`}
+                  />
+                ))}
+              </div>
+            )}
+          </div>
+        ) : (
+          <p className="text-sm text-slate-500">
+            Add testimonial cards in Prismic to display student success stories.
+          </p>
+        )}
       </div>
     </section>
   );
