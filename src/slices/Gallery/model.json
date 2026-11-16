@@ -1,0 +1,53 @@
+{
+  "description": "Gallery",
+  "id": "gallery",
+  "name": "Gallery",
+  "type": "SharedSlice",
+  "variations": [
+    {
+      "description": "Default",
+      "docURL": "...",
+      "id": "default",
+      "imageUrl": "",
+      "name": "Default",
+      "primary": {
+        "heading": {
+          "config": {
+            "allowTargetBlank": true,
+            "label": "Heading",
+            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl",
+            "placeholder": ""
+          },
+          "type": "StructuredText"
+        },
+        "paragraph": {
+          "config": {
+            "allowTargetBlank": true,
+            "label": "Paragraph",
+            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl",
+            "placeholder": ""
+          },
+          "type": "StructuredText"
+        },
+        "glallery": {
+          "config": {
+            "fields": {
+              "gallety_image": {
+                "config": {
+                  "constraint": {},
+                  "label": "Gallety Image",
+                  "thumbnails": []
+                },
+                "type": "Image"
+              }
+            },
+            "label": "Glallery",
+            "repeat": true
+          },
+          "type": "Group"
+        }
+      },
+      "version": "initial"
+    }
+  ]
+}

@@ -106,7 +106,7 @@ interface BlogDocumentData {
  */
 export type BlogDocument<Lang extends string = string> = prismic.PrismicDocumentWithoutUID<Simplify<BlogDocumentData>, "blog", Lang>;
 
-type ContentDocumentDataSlicesSlice = CtaSlice | BlogPreviewCardSlice | BlogPostSlice | PartnersContentSlice | ContentSlice | HeroSlice | TopicSlice
+type ContentDocumentDataSlicesSlice = CtaSlice | BlogPreviewCardSlice | BlogPostSlice | PartnersContentSlice | ContentSlice | HeroSlice | TopicSlice | GallerySlice
 
 /**
  * Content for Content documents
@@ -1492,6 +1492,79 @@ type FaqSliceVariation = FaqSliceDefault
 export type FaqSlice = prismic.SharedSlice<"faq", FaqSliceVariation>;
 
 /**
+ * Item in *Gallery → Default → Primary → Glallery*
+ */
+export interface GallerySliceDefaultPrimaryGlalleryItem {
+	/**
+	 * Gallety Image field in *Gallery → Default → Primary → Glallery*
+	 *
+	 * - **Field Type**: Image
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: gallery.default.primary.glallery[].gallety_image
+	 * - **Documentation**: https://prismic.io/docs/fields/image
+	 */
+	gallety_image: prismic.ImageField<never>;
+}
+
+/**
+ * Primary content in *Gallery → Default → Primary*
+ */
+export interface GallerySliceDefaultPrimary {
+	/**
+	 * Heading field in *Gallery → Default → Primary*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: gallery.default.primary.heading
+	 * - **Documentation**: https://prismic.io/docs/fields/rich-text
+	 */
+	heading: prismic.RichTextField;
+	
+	/**
+	 * Paragraph field in *Gallery → Default → Primary*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: gallery.default.primary.paragraph
+	 * - **Documentation**: https://prismic.io/docs/fields/rich-text
+	 */
+	paragraph: prismic.RichTextField;
+	
+	/**
+	 * Glallery field in *Gallery → Default → Primary*
+	 *
+	 * - **Field Type**: Group
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: gallery.default.primary.glallery[]
+	 * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
+	 */
+	glallery: prismic.GroupField<Simplify<GallerySliceDefaultPrimaryGlalleryItem>>;
+}
+
+/**
+ * Default variation for Gallery Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type GallerySliceDefault = prismic.SharedSliceVariation<"default", Simplify<GallerySliceDefaultPrimary>, never>;
+
+/**
+ * Slice variation for *Gallery*
+ */
+type GallerySliceVariation = GallerySliceDefault
+
+/**
+ * Gallery Shared Slice
+ *
+ * - **API ID**: `gallery`
+ * - **Description**: Gallery
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type GallerySlice = prismic.SharedSlice<"gallery", GallerySliceVariation>;
+
+/**
  * Item in *Hero → Default → Primary → Button Group*
  */
 export interface HeroSliceDefaultPrimaryButtonGroupItem {
@@ -2761,6 +2834,11 @@ declare module "@prismicio/client" {
 			FaqSliceDefaultPrimary,
 			FaqSliceVariation,
 			FaqSliceDefault,
+			GallerySlice,
+			GallerySliceDefaultPrimaryGlalleryItem,
+			GallerySliceDefaultPrimary,
+			GallerySliceVariation,
+			GallerySliceDefault,
 			HeroSlice,
 			HeroSliceDefaultPrimaryButtonGroupItem,
 			HeroSliceDefaultPrimary,

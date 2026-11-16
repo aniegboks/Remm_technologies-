@@ -32,6 +32,9 @@
             },
             "topic": {
               "type": "SharedSlice"
+            },
+            "gallery": {
+              "type": "SharedSlice"
             }
           }
         },
