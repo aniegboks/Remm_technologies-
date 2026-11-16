@@ -1,103 +1,154 @@
+
 "use client";
 
-import { useState } from "react";
-import Button from "./button";
+import { useState, type ChangeEvent, type FormEvent } from "react";
 import toast, { Toaster } from "react-hot-toast";
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    message: ""
+    phone: "",
+    message: "",
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
     const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
+
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
   };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission (e.g., API call)
+    // Replace with your API integration when ready.
     setTimeout(() => {
       setIsSubmitting(false);
-      setFormData({ name: "", email: "", message: "" });
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        message: "",
+      });
+
       toast.success("Message sent successfully!");
     }, 1500);
   };
 
+  const inputStyles =
+    "w-full rounded-lg bg-white px-4 py-3 text-[13px] text-[#252525] placeholder:text-[#999] outline-none transition-all duration-200 focus:ring-1 focus:ring-[#252525]/30";
+
+  const labelStyles =
+    "mb-1.5 block text-[11px] font-medium text-[#333]";
+
   return (
-    <div className="w-full h-full max-w-full bg-transparent p-6 sm:p-8 rounded-lg">
+    <div className="w-full">
       <Toaster position="top-center" reverseOrder={false} />
 
-      <form onSubmit={handleSubmit} className="w-full space-y-4">
-        {/* Name */}
-        <div>
-          <label htmlFor="name" className="block text-sm font-body font-medium text-white my-2">
-            Name
-          </label>
-          <input
-            type="text"
-            id="name"
-            name="name"
-            value={formData.name}
-            onChange={handleChange}
-            className="w-full px-4 py-2 border-b border-gray-300  focus:outline-none text-white bg-transparent font-body text-sm"
-            required
-          />
-        </div>
+      <div className="w-full rounded-2xl bg-[#F2F2F2] p-5 sm:p-7 lg:p-8">
+        <form onSubmit={handleSubmit} className="space-y-4">
 
-        {/* Email */}
-        <div>
-          <label htmlFor="email" className="block text-sm font-body font-medium text-white my-2">
-            Email
-          </label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
-            className="w-full px-4 py-2 border-b border-gray-300 font-body text-sm focus:outline-none text-white bg-transparent"
-            required
-          />
-        </div>
+          {/* Name */}
+          <div>
+            <label htmlFor="name" className={labelStyles}>
+              Full Name
+            </label>
 
-        {/* Message */}
-        <div>
-          <label htmlFor="message" className="block text-sm  font-body font-medium text-white mb-2 mt-16">
-            Message
-          </label>
-          <textarea
-            id="message"
-            name="message"
-            value={formData.message}
-            onChange={handleChange}
-            rows={4}
-            className="w-full px-4 py-2 border-b border-gray-300 font-body text-sm focus:outline-none focus:ring-1 focus:ring-white-500 text-white bg-transparent"
-            required
-          />
-        </div>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              value={formData.name}
+              onChange={handleChange}
+              placeholder="Enter Your Full Name"
+              autoComplete="name"
+              className={inputStyles}
+              required
+            />
+          </div>
 
-        {/* Submit */}
-        <div className="flex justify-start">
-          <Button
-            variant="secondary"
-            type="submit"
-            disabled={isSubmitting}
-            className={`hover:bg-blue-800 text-white mt-4 font-bold py-2 font-body text-sm px-6 rounded focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 ${isSubmitting ? "opacity-50 cursor-not-allowed" : ""
-              }`}
-          >
-            {isSubmitting ? "Sending Message..." : "Send Message"}
-          </Button>
-        </div>
-      </form>
+          {/* Email */}
+          <div>
+            <label htmlFor="email" className={labelStyles}>
+              Email Address
+            </label>
+
+            <input
+              type="email"
+              id="email"
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
+              placeholder="Enter Your Email Address"
+              autoComplete="email"
+              className={inputStyles}
+              required
+            />
+          </div>
+
+          {/* Phone */}
+          <div>
+            <label htmlFor="phone" className={labelStyles}>
+              Phone Number
+            </label>
+
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              value={formData.phone}
+              onChange={handleChange}
+              placeholder="Enter Your Phone Number"
+              autoComplete="tel"
+              className={inputStyles}
+            />
+          </div>
+
+          {/* Message */}
+          <div>
+            <label htmlFor="message" className={labelStyles}>
+              Message
+            </label>
+
+            <textarea
+              id="message"
+              name="message"
+              value={formData.message}
+              onChange={handleChange}
+              placeholder="Write Your Message Here"
+              rows={5}
+              className={`${inputStyles} min-h-[120px] resize-none`}
+              required
+            />
+          </div>
+
+          {/* Submit */}
+          <div className="pt-1">
+            <button
+              type="submit"
+              disabled={isSubmitting}
+              className="inline-flex items-center gap-3 rounded-lg bg-[#252525] px-5 py-3 text-[12px] font-medium text-white transition-all duration-300 hover:bg-[#444] disabled:cursor-not-allowed disabled:opacity-60"
+            >
+              {isSubmitting ? "Sending Message..." : "Send Message"}
+
+              {!isSubmitting && (
+                <span aria-hidden="true" className="text-sm">
+                  →
+                </span>
+              )}
+            </button>
+          </div>
+
+        </form>
+      </div>
     </div>
   );
 };
