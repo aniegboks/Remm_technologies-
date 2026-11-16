@@ -6,6 +6,7 @@ import BlogPreviewCard from "./BlogPreviewCard";
 import ClientCarousel from "./ClientCarousel";
 import Metrics from "./Metrics";
 import Cta from "./Cta";
+import DemoForm from "./DemoForm";
 import Faq from "./Faq";
 import Gallery from "./Gallery";
 import Hero from "./Hero";
@@ -26,6 +27,7 @@ export const components = {
 	client_carousel: ClientCarousel,
 	content: Metrics,
 	cta: Cta,
+	demo_form: DemoForm,
 	faq: Faq,
 	gallery: Gallery,
 	hero: Hero,

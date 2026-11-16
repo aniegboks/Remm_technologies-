@@ -21,6 +21,14 @@
       "path": "/blog/:uid"
     },
     {
+      "type": "demo",
+      "path": "/demo"
+    },
+    {
+      "type": "gallery",
+      "path": "/gallery"
+    },
+    {
       "type": "home_page",
       "path": "/"
     },

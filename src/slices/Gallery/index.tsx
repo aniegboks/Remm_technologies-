@@ -62,7 +62,7 @@ const Gallery = ({ slice }: GalleryProps) => {
 		<section
 			data-slice-type={slice.slice_type}
 			data-slice-variation={slice.variation}
-			className="bg-white py-16 text-[#171717] md:py-24"
+			className="bg-white pt-28 pb-16 text-[#171717] sm:pt-32 md:pt-36 md:pb-24"
 		>
 			<div className="mx-auto w-full max-w-[1440px] px-5 sm:px-8 lg:px-12">
 
@@ -110,7 +110,7 @@ const Gallery = ({ slice }: GalleryProps) => {
 									fill
 									sizes="(max-width: 768px) 50vw, 65vw"
 									className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]"
-									alt={image.alt || `Gallery image ${index + 1}`}
+									alt=""
 								/>
 
 								<span className="absolute inset-0 flex items-center justify-center bg-black/0 opacity-0 transition-all duration-300 group-hover:bg-black/15 group-hover:opacity-100">
@@ -142,6 +142,7 @@ const Gallery = ({ slice }: GalleryProps) => {
 					aria-label="Image preview"
 					onClick={closePreview}
 				>
+
 					{/* Close */}
 					<button
 						type="button"
@@ -194,10 +195,7 @@ const Gallery = ({ slice }: GalleryProps) => {
 							sizes="100vw"
 							className="object-contain"
 							priority
-							alt={
-								images[selectedIndex].gallety_image.alt ||
-								"Gallery preview"
-							}
+							alt=""
 						/>
 					</div>
 
@@ -230,6 +228,7 @@ const Gallery = ({ slice }: GalleryProps) => {
 						{" / "}
 						{String(images.length).padStart(2, "0")}
 					</div>
+
 				</div>
 			)}
 		</section>

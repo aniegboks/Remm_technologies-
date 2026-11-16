@@ -166,6 +166,126 @@ interface ContentDocumentData {
  */
 export type ContentDocument<Lang extends string = string> = prismic.PrismicDocumentWithUID<Simplify<ContentDocumentData>, "content", Lang>;
 
+type DemoDocumentDataSlicesSlice = DemoFormSlice
+
+/**
+ * Content for Demo documents
+ */
+interface DemoDocumentData {
+	/**
+	 * Slice Zone field in *Demo*
+	 *
+	 * - **Field Type**: Slice Zone
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: demo.slices[]
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/slices
+	 */
+	slices: prismic.SliceZone<DemoDocumentDataSlicesSlice>;/**
+	 * Meta Title field in *Demo*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: A title of the page used for social media and search engines
+	 * - **API ID Path**: demo.meta_title
+	 * - **Tab**: SEO & Metadata
+	 * - **Documentation**: https://prismic.io/docs/fields/text
+	 */
+	meta_title: prismic.KeyTextField;
+	
+	/**
+	 * Meta Description field in *Demo*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: A brief summary of the page
+	 * - **API ID Path**: demo.meta_description
+	 * - **Tab**: SEO & Metadata
+	 * - **Documentation**: https://prismic.io/docs/fields/text
+	 */
+	meta_description: prismic.KeyTextField;
+	
+	/**
+	 * Meta Image field in *Demo*
+	 *
+	 * - **Field Type**: Image
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: demo.meta_image
+	 * - **Tab**: SEO & Metadata
+	 * - **Documentation**: https://prismic.io/docs/fields/image
+	 */
+	meta_image: prismic.ImageField<never>;
+}
+
+/**
+ * Demo document from Prismic
+ *
+ * - **API ID**: `demo`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/content-modeling
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type DemoDocument<Lang extends string = string> = prismic.PrismicDocumentWithoutUID<Simplify<DemoDocumentData>, "demo", Lang>;
+
+type GalleryDocumentDataSlicesSlice = GallerySlice
+
+/**
+ * Content for Gallery documents
+ */
+interface GalleryDocumentData {
+	/**
+	 * Slice Zone field in *Gallery*
+	 *
+	 * - **Field Type**: Slice Zone
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: gallery.slices[]
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/slices
+	 */
+	slices: prismic.SliceZone<GalleryDocumentDataSlicesSlice>;/**
+	 * Meta Title field in *Gallery*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: A title of the page used for social media and search engines
+	 * - **API ID Path**: gallery.meta_title
+	 * - **Tab**: SEO & Metadata
+	 * - **Documentation**: https://prismic.io/docs/fields/text
+	 */
+	meta_title: prismic.KeyTextField;
+	
+	/**
+	 * Meta Description field in *Gallery*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: A brief summary of the page
+	 * - **API ID Path**: gallery.meta_description
+	 * - **Tab**: SEO & Metadata
+	 * - **Documentation**: https://prismic.io/docs/fields/text
+	 */
+	meta_description: prismic.KeyTextField;
+	
+	/**
+	 * Meta Image field in *Gallery*
+	 *
+	 * - **Field Type**: Image
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: gallery.meta_image
+	 * - **Tab**: SEO & Metadata
+	 * - **Documentation**: https://prismic.io/docs/fields/image
+	 */
+	meta_image: prismic.ImageField<never>;
+}
+
+/**
+ * Gallery document from Prismic
+ *
+ * - **API ID**: `gallery`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/content-modeling
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type GalleryDocument<Lang extends string = string> = prismic.PrismicDocumentWithoutUID<Simplify<GalleryDocumentData>, "gallery", Lang>;
+
 type HomePageDocumentDataSlicesSlice = ClientCarouselSlice | TestimonialsSlice | ContentSlice | PartnersCarouselSlice | FaqSlice | CtaSlice | MilestonesSlice | PropertiesSlice | RecentSlice | AboutSlice | HeroSlice
 
 /**
@@ -694,7 +814,7 @@ interface SubjectDocumentData {
  */
 export type SubjectDocument<Lang extends string = string> = prismic.PrismicDocumentWithUID<Simplify<SubjectDocumentData>, "subject", Lang>;
 
-export type AllDocumentTypes = BlogDocument | ContentDocument | HomePageDocument | PageDocument | ProjectsDocument | PropertiesDocument | SettingsDocument | SubjectDocument;
+export type AllDocumentTypes = BlogDocument | ContentDocument | DemoDocument | GalleryDocument | HomePageDocument | PageDocument | ProjectsDocument | PropertiesDocument | SettingsDocument | SubjectDocument;
 
 /**
  * Primary content in *About → Default → Primary*
@@ -1397,6 +1517,54 @@ type CtaSliceVariation = CtaSliceDefault
  * - **Documentation**: https://prismic.io/docs/slices
  */
 export type CtaSlice = prismic.SharedSlice<"cta", CtaSliceVariation>;
+
+/**
+ * Primary content in *DemoForm → Default → Primary*
+ */
+export interface DemoFormSliceDefaultPrimary {
+	/**
+	 * Heading field in *DemoForm → Default → Primary*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: demo_form.default.primary.heading
+	 * - **Documentation**: https://prismic.io/docs/fields/text
+	 */
+	heading: prismic.KeyTextField;
+	
+	/**
+	 * Paragraph field in *DemoForm → Default → Primary*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: demo_form.default.primary.paragraph
+	 * - **Documentation**: https://prismic.io/docs/fields/rich-text
+	 */
+	paragraph: prismic.RichTextField;
+}
+
+/**
+ * Default variation for DemoForm Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type DemoFormSliceDefault = prismic.SharedSliceVariation<"default", Simplify<DemoFormSliceDefaultPrimary>, never>;
+
+/**
+ * Slice variation for *DemoForm*
+ */
+type DemoFormSliceVariation = DemoFormSliceDefault
+
+/**
+ * DemoForm Shared Slice
+ *
+ * - **API ID**: `demo_form`
+ * - **Description**: DemoForm
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type DemoFormSlice = prismic.SharedSlice<"demo_form", DemoFormSliceVariation>;
 
 /**
  * Item in *Faq → Default → Primary → faq*
@@ -2774,6 +2942,12 @@ declare module "@prismicio/client" {
 			ContentDocument,
 			ContentDocumentData,
 			ContentDocumentDataSlicesSlice,
+			DemoDocument,
+			DemoDocumentData,
+			DemoDocumentDataSlicesSlice,
+			GalleryDocument,
+			GalleryDocumentData,
+			GalleryDocumentDataSlicesSlice,
 			HomePageDocument,
 			HomePageDocumentData,
 			HomePageDocumentDataSlicesSlice,
@@ -2829,6 +3003,10 @@ declare module "@prismicio/client" {
 			CtaSliceDefaultPrimary,
 			CtaSliceVariation,
 			CtaSliceDefault,
+			DemoFormSlice,
+			DemoFormSliceDefaultPrimary,
+			DemoFormSliceVariation,
+			DemoFormSliceDefault,
 			FaqSlice,
 			FaqSliceDefaultPrimaryQuestionItem,
 			FaqSliceDefaultPrimary,

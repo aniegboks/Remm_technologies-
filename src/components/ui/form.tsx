@@ -32,6 +32,7 @@ const ContactForm = () => {
     // Replace with your API integration when ready.
     setTimeout(() => {
       setIsSubmitting(false);
+
       setFormData({
         name: "",
         email: "",
@@ -44,13 +45,13 @@ const ContactForm = () => {
   };
 
   const inputStyles =
-    "w-full rounded-lg bg-white px-4 py-3 text-[13px] text-[#252525] placeholder:text-[#999] outline-none transition-all duration-200 focus:ring-1 focus:ring-[#252525]/30";
+    "w-full rounded-lg bg-white px-4 py-3 text-[13px] text-[#252525] placeholder:text-[#999] outline-none transition-all duration-200 focus:ring-1 focus:ring-[#034966]/40";
 
   const labelStyles =
     "mb-1.5 block text-[11px] font-medium text-[#333]";
 
   return (
-    <div className="w-full">
+    <div className="w-full pt-28 sm:pt-32 md:pt-36">
       <Toaster position="top-center" reverseOrder={false} />
 
       <div className="w-full rounded-2xl bg-[#F2F2F2] p-5 sm:p-7 lg:p-8">
@@ -135,15 +136,11 @@ const ContactForm = () => {
             <button
               type="submit"
               disabled={isSubmitting}
-              className="inline-flex items-center gap-3 rounded-lg bg-[#252525] px-5 py-3 text-[12px] font-medium text-white transition-all duration-300 hover:bg-[#444] disabled:cursor-not-allowed disabled:opacity-60"
+              className="inline-flex items-center justify-center rounded-lg bg-[#252525] px-5 py-3 text-[12px] font-medium text-white transition-colors duration-300 hover:bg-[#034966] disabled:cursor-not-allowed disabled:opacity-60"
             >
-              {isSubmitting ? "Sending Message..." : "Send Message"}
-
-              {!isSubmitting && (
-                <span aria-hidden="true" className="text-sm">
-                  
-                </span>
-              )}
+              {isSubmitting
+                ? "Sending Message..."
+                : "Send Message"}
             </button>
           </div>
 
