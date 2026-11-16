@@ -1,28 +1,27 @@
+
 "use client";
 
 import { asText, isFilled, type Content } from "@prismicio/client";
 import type { SliceComponentProps } from "@prismicio/react";
-import { PrismicNextImage, PrismicNextLink } from "@prismicio/next";
+import { PrismicNextImage } from "@prismicio/next";
 import Container from "@/components/ui/container";
+import ContactForm from "@/components/ui/form";
 
 export type CtaProps = SliceComponentProps<Content.CtaSlice>;
 
 const Cta = ({ slice }: CtaProps) => {
   const { primary } = slice;
 
-  const heading = asText(primary.cta_heading) || "Ready to get started?";
+  const heading = asText(primary.cta_heading) || "Talk to our support team";
   const description = primary.cta_description ?? "";
-  const buttonLabel = primary.button_label ?? "Get started";
-  const hasButtonLink = isFilled.link(primary.button_link);
 
   return (
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      style={{ fontFamily: "'Montserrat', sans-serif" }}
-      className="relative flex min-h-[45dvh] items-center justify-center overflow-hidden py-32 font-sans selection:bg-white selection:text-black"
+      className="relative overflow-hidden py-20 md:py-28"
     >
-      {/* Background image and overlay */}
+      {/* Background image */}
       <div className="absolute inset-0 z-0">
         {isFilled.image(primary.cta_img) && (
           <PrismicNextImage
@@ -33,40 +32,43 @@ const Cta = ({ slice }: CtaProps) => {
             alt=""
           />
         )}
-        {/* Updated overlay using the teal color from the reference image */}
-        <div className="absolute inset-0 bg-[#0B4B62]/80" />
+
+        <div className="absolute inset-0 bg-[#0B4B62]/85" />
       </div>
-      <div className="relative z-10 flex flex-col items-center text-center">
-        <Container >
-          <div className="mx-auto flex max-w-3xl flex-col items-center">
-            <h2 className="mb-6 text-4xl font-medium tracking-tight text-white md:text-6xl lg:text-7xl">
+
+      <Container>
+        <div className="relative z-10 grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-20">
+
+          {/* Left content */}
+          <div className="flex flex-col text-white">
+            <h2 className="max-w-xl text-4xl font-medium tracking-tight md:text-5xl lg:text-6xl">
               {heading}
             </h2>
 
             {description && (
-              <p className="mb-10 max-w-xl text-sm leading-relaxed text-white/90 md:text-base">
+              <p className="mt-5 max-w-md text-sm leading-relaxed text-white/80 md:text-base">
                 {description}
               </p>
             )}
-            {hasButtonLink ? (
-              <PrismicNextLink
-                field={primary.button_link}
-                className="mt-6 inline-flex items-center justify-center rounded-lg bg-white px-8 py-3 text-sm font-medium text-black shadow-lg transition-transform duration-300 hover:scale-105"
-              >
-                {buttonLabel || "Get started"}
-              </PrismicNextLink>
-            ) : (
-              <a
-                href="mailto:ruth.c@remmtechnologies.com"
-                className="mt-6 inline-flex items-center justify-center rounded-lg bg-white px-8 py-3 text-sm font-medium text-black shadow-lg transition-transform duration-300 hover:scale-105"
-              >
-                {buttonLabel || "Get started"}
-              </a>
-            )}
-          </div>
-        </Container>
-      </div>
 
+            <div className="mt-10">
+              <p className="text-sm font-medium text-white">
+                We'd love to hear from you.
+              </p>
+              <p className="mt-2 max-w-sm text-sm leading-relaxed text-white/70">
+                Have a question about our services or need assistance?
+                Send us a message and our team will get back to you.
+              </p>
+            </div>
+          </div>
+
+          {/* Right contact form */}
+          <div className="w-full">
+            <ContactForm />
+          </div>
+
+        </div>
+      </Container>
     </section>
   );
 };

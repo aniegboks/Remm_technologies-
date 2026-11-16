@@ -141,7 +141,7 @@ const ContactForm = () => {
 
               {!isSubmitting && (
                 <span aria-hidden="true" className="text-sm">
-                  →
+                  
                 </span>
               )}
             </button>
